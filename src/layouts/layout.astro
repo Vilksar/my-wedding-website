@@ -1,0 +1,148 @@
+---
+
+// Import the project scripts.
+import { getIcon, getColorSchemes, getLanguages, getTranslation, getLocalizedRoute, getAppLogo, getAppTitle } from "../scripts/server";
+
+// Import the project components.
+import IconByData from "../components/icon-by-data.astro";
+import ImageByData from "../components/image-by-data.astro";
+
+/**
+ * Represents the layout properties.
+ */
+export type Properties = {
+
+    /**
+     * The title.
+     */
+    title?: (string | undefined);
+
+    /**
+     * The language ID.
+     */
+    languageId?: (string | undefined);
+
+    /**
+     * The language direction.
+     */
+    languageDirection?: (string | undefined);
+
+};
+
+// Get the layout properties.
+const properties = Astro.props as Properties;
+
+// Get the logo and the title.
+const appLogo = getAppLogo();
+const appTitle = getAppTitle(properties.languageId);
+const pageTitle = properties.title;
+
+---
+
+<html lang={properties.languageId} dir={properties.languageDirection} class="h-full box-border">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+        {(pageTitle === null || pageTitle === undefined || pageTitle === "") &&
+            <title>{appTitle}</title>
+        }
+        {(pageTitle !== null && pageTitle !== undefined && pageTitle !== "") &&
+            <title>{appTitle} - {pageTitle}</title>
+        }
+        <script is:inline src="/scripts/scripts.js" />
+	</head>
+	<body class="group/body flex flex-col min-h-full overflow-y-scroll" data-component="body" data-body-is-menu-toggled="false">
+        {(properties.languageId !== null && properties.languageId !== undefined && properties.languageId !== "") &&
+            <header class="fixed top-0 left-0 z-10 flex flex-col md:flex-row w-full bg-transparent pointer-events-none">
+                <div class="basis-auto md:basis-2/3 hidden md:flex flex-col w-full" />
+                <div class="basis-auto md:basis-1/3 flex flex-col w-full">
+                    <div class="flex flex-row justify-between items-center w-full py-5 px-5">
+                        <div class="flex flex-row justify-start pointer-events-auto">
+                            <a href={getLocalizedRoute("/", undefined, undefined)} class="flex flex-row justify-center items-center p-2 border rounded font-semibold text-lg uppercase light:text-slate-900 light:border-transparent light:hover:border-slate-500 dark:text-slate-100 dark:border-transparent dark:hover:border-slate-500" title={appTitle}>
+                                <IconByData class:list="w-6 h-6 min-w-6 mx-1 light:fill-slate-900 dark:fill-slate-100" data={appLogo} alternateText={appTitle} />
+                            </a>
+                        </div>
+                        <div class="flex flex-row justify-end pointer-events-auto">
+                            <button class="flex flex-row justify-center items-center p-2 border rounded font-semibold text-lg uppercase light:text-slate-900 light:bg-slate-100 light:border-slate-300 light:hover:bg-slate-100 light:hover:border-slate-500 light:group-data-[body-is-menu-toggled=true]/body:bg-slate-300 dark:text-slate-100 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-900 dark:hover:border-slate-500 dark:group-data-[body-is-menu-toggled=true]/body:bg-slate-700" data-body="menu-toggle" title={getTranslation(properties.languageId, "layouts/layout/ui/menu")}>
+                                <IconByData class:list="w-6 h-6 min-w-6 mx-1 group-data-[body-is-menu-toggled=true]/body:w-0 group-data-[body-is-menu-toggled=true]/body:h-0 group-data-[body-is-menu-toggled=true]/body:min-w-0 group-data-[body-is-menu-toggled=true]/body:mx-0" data={getIcon("bars-3")} alternateText="" />
+                                <IconByData class:list="w-0 h-0 min-w-0 mx-0 group-data-[body-is-menu-toggled=true]/body:w-6 group-data-[body-is-menu-toggled=true]/body:h-6 group-data-[body-is-menu-toggled=true]/body:min-w-6 group-data-[body-is-menu-toggled=true]/body:mx-1" data={getIcon("x-mark")} alternateText="" />
+                                <span class="mx-1">{getTranslation(properties.languageId, "layouts/layout/ui/menu")}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        }
+        <main class="flex flex-col md:flex-row w-full">
+            <div class="basis-auto md:basis-2/3 flex group-data-[body-is-menu-toggled=true]/body:hidden md:group-data-[body-is-menu-toggled=true]/body:flex flex-col w-full min-h-screen">
+                <div class="sticky top-0 h-screen">
+                    <div class="absolute top-0 left-0 flex flex-col w-full h-full">
+                        <slot name="content-image" />
+                    </div>
+                    <div class="absolute bottom-10 left-10 flex flex-col mr-20 p-2 rounded light:bg-slate-100/30 light:text-slate-900 dark:bg-slate-900/30 dark:text-slate-100">
+                        {(pageTitle === null || pageTitle === undefined || pageTitle === "") &&
+                            <div class="text-5xl font-bold">
+                                <span>{appTitle}</span>
+                            </div>
+                        }
+                        {(pageTitle !== null && pageTitle !== undefined && pageTitle !== "") &&
+                            <div class="text-5xl font-bold">
+                                <span>{appTitle}</span>
+                            </div>
+                            <div class="text-3xl font-normal">
+                                <span>{pageTitle}</span>
+                            </div>
+                        }
+                    </div>
+                    <div class="absolute top-0 left-0 hidden group-data-[body-is-menu-toggled=true]/body:flex flex-col w-full h-full" data-body="menu-backdrop">
+                        <div class="w-full h-full object-cover backdrop-blur-md light:bg-slate-900/50 dark:bg-slate-100/50" />
+                    </div>
+                </div>
+            </div>
+            {(properties.languageId !== null && properties.languageId !== undefined && properties.languageId !== "") &&
+                <div class="basis-auto md:basis-1/3 hidden group-data-[body-is-menu-toggled=true]/body:flex flex-col w-full min-h-screen light:bg-slate-100 light:text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+                    <div class="flex-auto flex flex-col w-full h-full pt-24 pb-5 px-5">
+                        <div class="flex-auto flex flex-col justify-center items-center w-full px-2">
+                            <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
+                                <div class="flex flex-row justify-center items-center w-full max-w-80 p-2">
+                                    <a href={getLocalizedRoute("/", undefined, properties.languageId)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(properties.languageId, "pages/[languageId]/index/title")}>
+                                        <IconByData class:list="w-6 h-6 min-w-6 mx-1 light:fill-slate-900 dark:fill-slate-100" data={appLogo} alt={getTranslation(properties.languageId, "pages/[languageId]/index/title")} />
+                                        <span class="mx-1">{getTranslation(properties.languageId, "pages/[languageId]/index/title")}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-none flex flex-row justify-around items-center w-full p-2">
+                            <div class="flex flex-row justify-center items-center mx-1" data-component="color-schemes">
+                                {getColorSchemes().map((colorScheme) =>
+                                    <div class="flex flex-row justify-center items-center mx-[0.1rem]">
+                                        <button type="button" class="flex flex-row justify-center items-center p-2 border rounded font-semibold text-lg uppercase light:text-slate-900 light:bg-slate-100 light:border-slate-300 light:hover:bg-slate-100 light:hover:border-slate-500 light:data-[is-active=true]:bg-slate-300 light:data-[is-active=true]:border-slate-300 light:data-[is-active=true]:hover:bg-slate-300 light:data-[is-active=true]:hover:border-slate-500 dark:text-slate-100 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-900 dark:hover:border-slate-500 dark:data-[is-active=true]:bg-slate-700 dark:data-[is-active=true]:border-slate-700 dark:data-[is-active=true]:hover:bg-slate-700 dark:data-[is-active=true]:hover:border-slate-500" data-color-scheme={colorScheme.id} data-is-active="false" title={getTranslation(properties.languageId!, `content/colorSchemes/${colorScheme.id}`)}>
+                                            <ImageByData class:list="w-6 h-6 min-w-6 mx-1" data={colorScheme.icon} alternateText={getTranslation(properties.languageId!, `content/colorSchemes/${colorScheme.id}`)} />
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                            <div class="flex flex-row justify-center items-center mx-1" data-component="languages">
+                                {getLanguages().map((language) =>
+                                    <div class="flex flex-row justify-center items-center mx-[0.1rem]" lang={language.id} dir={language.direction}>
+                                        <a href={getLocalizedRoute(Astro.url.pathname, properties.languageId, language.id)} class="flex flex-row justify-center items-center p-2 border rounded font-semibold text-lg uppercase light:text-slate-900 light:bg-slate-100 light:border-slate-300 light:hover:bg-slate-100 light:hover:border-slate-500 light:data-[is-active=true]:bg-slate-300 light:data-[is-active=true]:border-slate-300 light:data-[is-active=true]:hover:bg-slate-300 light:data-[is-active=true]:hover:border-slate-500 dark:text-slate-100 dark:bg-slate-900 dark:border-slate-700 dark:hover:bg-slate-900 dark:hover:border-slate-500 dark:data-[is-active=true]:bg-slate-700 dark:data-[is-active=true]:border-slate-700 dark:data-[is-active=true]:hover:bg-slate-700 dark:data-[is-active=true]:hover:border-slate-500" data-is-active={`${language.id === properties.languageId}`} title={getTranslation(properties.languageId!, `content/languages/${language.id}`)}>
+                                            <ImageByData class:list="w-6 h-6 min-w-6 mx-1" data={language.icon} alternateText={getTranslation(properties.languageId!, `content/languages/${language.id}`)} />
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="basis-auto md:basis-1/3 flex group-data-[body-is-menu-toggled=true]/body:hidden flex-col w-full min-h-screen light:bg-slate-100 light:text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+                <div class="flex-auto flex flex-col w-full h-full pt-24 pb-5 px-5">
+                    <slot name="content-text" />
+                </div>
+            </div>
+        </main>
+        <script src="../scripts/client.ts" />
+    </body>
+</html>

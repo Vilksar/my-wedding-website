@@ -6,6 +6,16 @@
     "nativeName": "Українська",
     "translations": {
         "./app/title": "Астро",
-        "text/hello": "Привіт, {0}!"
+        "assets/images/astro": "",
+        "content/colorSchemes/light": "Світла",
+        "content/colorSchemes/dark": "Темна",
+        "content/languages/en": "Англійська",
+        "content/languages/ro": "Румунська",
+        "content/languages/ua": "Українська",
+        "layouts/layout/ui/menu": "Меню",
+        "pages/index/title": "",
+        "pages/index/text/chooseLanguage": "Виберіть мову:",
+        "pages/[languageId]/index/title": "",
+        "pages/[languageId]/index/text/hello": "Привіт, {0}!"
     }
 }

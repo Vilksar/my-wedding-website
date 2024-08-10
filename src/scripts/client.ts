@@ -79,3 +79,25 @@ window.document.querySelectorAll<HTMLDivElement>(`[data-component="color-schemes
         });
     });
 });
+
+// Go over each body element.
+window.document.querySelectorAll<HTMLDivElement>(`[data-component="body"]`).forEach((menuElement) => {
+    // Go over each menu toggle button.
+    menuElement.querySelectorAll<HTMLButtonElement>(`button[data-body="menu-toggle"]`).forEach((menuToggleButton) => {
+        // Add an event listener for clicking the menu toggle button.
+        menuToggleButton.addEventListener("click", () => {
+            // Get the current menu toggle state.
+            const currentIsToggled: boolean = menuElement.getAttribute("data-body-is-menu-toggled") === "true";
+            // Update the menu toggle state.
+            menuElement.setAttribute("data-body-is-menu-toggled", `${!currentIsToggled}`);
+        });
+    });
+    // Go over each menu backdrop element.
+    menuElement.querySelectorAll<HTMLDivElement>(`div[data-body="menu-backdrop"]`).forEach((menuBackdropElement) => {
+        // Add an event listener for clicking the menu backdrop element.
+        menuBackdropElement.addEventListener("click", () => {
+            // Update the menu toggle state.
+            menuElement.setAttribute("data-body-is-menu-toggled", "false");
+        });
+    });
+});

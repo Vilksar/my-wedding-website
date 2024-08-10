@@ -6,6 +6,16 @@
     "nativeName": "Română",
     "translations": {
         "./app/title": "Astro",
-        "text/hello": "Salut, {0}!"
+        "assets/images/astro": "",
+        "content/colorSchemes/light": "Lumină",
+        "content/colorSchemes/dark": "Întuneric",
+        "content/languages/en": "Engleză",
+        "content/languages/ro": "Română",
+        "content/languages/ua": "Ucraineană",
+        "layouts/layout/ui/menu": "Meniu",
+        "pages/index/title": "",
+        "pages/index/text/chooseLanguage": "Alege o limbă:",
+        "pages/[languageId]/index/title": "",
+        "pages/[languageId]/index/text/hello": "Salut, {0}!"
     }
 }
