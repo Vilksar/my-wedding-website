@@ -1,0 +1,64 @@
+---
+
+// Import the project scripts.
+import { getImage, getLanguage, getLanguages, getTranslation } from "../../scripts/server";
+
+// Import the project layout.
+import type { Properties } from "../../layouts/layout.astro";
+import Layout from "../../layouts/layout.astro";
+
+// Import the project components.
+import ImageByData from "../../components/image-by-data.astro";
+
+/**
+ * Defines the static paths.
+ * @returns The static paths.
+ */
+export async function getStaticPaths() {
+    // Return the static paths.
+    return getLanguages().map(language => ({ params: { languageId: language.id } }));
+}
+
+/**
+ * Represents the parameters.
+ */
+export type Parameters = {
+
+    /**
+     * The language ID.
+     */
+    languageId: string;
+
+};
+
+// Get the parameters.
+const parameters = Astro.params as Parameters;
+
+// Get the current language.
+const currentLanguage = getLanguage(parameters.languageId);
+
+// Get the properties.
+const properties: Properties = {
+    title: getTranslation(currentLanguage.id, "pages/[languageId]/index/title"),
+    languageId: currentLanguage.id,
+    languageDirection: currentLanguage.direction,
+} as const;
+
+---
+
+<Layout {...properties}>
+    <Fragment slot="content-image">
+        <ImageByData class:list="object-cover w-full h-full" data={getImage("astro")} alternateText={getTranslation(currentLanguage.id, "assets/images/astro")} />
+    </Fragment>
+    <Fragment slot="content-text">
+        <div class="flex-auto flex flex-col justify-start items-center w-full px-2">
+            <p class="flex flex-row justify-center items-center my-2">
+                <ImageByData class:list="w-6 h-6 mx-1" data={currentLanguage.icon} alternateText="" />
+                <span class="mx-1 font-medium">{getTranslation(currentLanguage.id, `content/languages/${currentLanguage.id}`)}</span>
+            </p>
+            <p class="flex flex-col justify-center items-center my-2">
+                <span class="mx-1">{getTranslation(currentLanguage.id, "pages/[languageId]/index/text/hello", [ "Astro" ])}</span>
+            </p>
+        </div>
+    </Fragment>
+</Layout>

@@ -1,16 +1,51 @@
 ---
 
+// Import the project scripts.
+import { getLanguages, getTranslation, getLocalizedRoute, getAppLogo, getAppTitle } from "../scripts/server";
+
+// Import the project layout.
+import type { Properties } from "../layouts/layout.astro";
+import Layout from "../layouts/layout.astro";
+
+// Import the project components.
+import IconByData from "../components/icon-by-data.astro";
+import ImageByData from "../components/image-by-data.astro";
+
+// Get the properties.
+const properties: Properties = {
+    title: undefined,
+    languageId: undefined,
+    languageDirection: undefined,
+} as const;
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout {...properties}>
+    <Fragment slot="content-image">
+        <div class="object-cover w-full h-full bg-gradient-to-br light:from-slate-500 light:to-slate-900 dark:from-slate-100 dark:to-slate-500" />
+    </Fragment>
+    <Fragment slot="content-text">
+        <div class="flex-auto flex flex-col justify-center items-center w-full px-2">
+            <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
+                <IconByData class:list="w-32 h-32 min-w-32 mx-1 light:fill-slate-900 dark:fill-slate-100" data={getAppLogo()} alternateText={getAppTitle(undefined)} />
+            </div>
+            <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
+                {getLanguages().map(async (language) =>
+                    <div class="text-xl font-semibold" lang={language.id} dir={language.direction}>
+                        <span class="mx-1">{getTranslation(language.id, "pages/index/text/chooseLanguage")}</span>
+                    </div>
+                )}
+            </div>
+            <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
+                {getLanguages().map(async (language) =>
+                    <div class="flex flex-row justify-center items-center w-full p-2" lang={language.id} dir={language.direction}>
+                        <a href={getLocalizedRoute("/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(language.id, `content/languages/${language.id}`)}>
+                            <ImageByData class:list="w-6 h-6 min-w-6 mx-1" data={language.icon} alternateText={getTranslation(language.id, `content/languages/${language.id}`)} />
+                            <span class="mx-1">{getTranslation(language.id, `content/languages/${language.id}`)}</span>
+                        </a>
+                    </div>
+                )}
+            </div>
+        </div>
+    </Fragment>
+</Layout>
