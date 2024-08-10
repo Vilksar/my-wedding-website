@@ -1,0 +1,10 @@
+{
+    "id": "ro",
+    "emoji": "🇷🇴",
+    "icon": "./ro.svg",
+    "direction": "ltr",
+    "nativeName": "Română",
+    "translations": {
+        "hello": "Salut, {0}!"
+    }
+}

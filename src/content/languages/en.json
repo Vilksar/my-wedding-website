@@ -1,0 +1,10 @@
+{
+    "id": "en",
+    "emoji": "🇺🇸/🇬🇧",
+    "icon": "./en.svg",
+    "direction": "ltr",
+    "nativeName": "English",
+    "translations": {
+        "hello": "Hello, {0}!"
+    }
+}

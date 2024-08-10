@@ -1,0 +1,10 @@
+{
+    "id": "ua",
+    "emoji": "🇺🇦",
+    "icon": "./ua.svg",
+    "direction": "ltr",
+    "nativeName": "Українська",
+    "translations": {
+        "hello": "Привіт, {0}!"
+    }
+}
