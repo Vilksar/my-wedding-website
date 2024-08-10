@@ -5,6 +5,7 @@
     "direction": "ltr",
     "nativeName": "Română",
     "translations": {
-        "hello": "Salut, {0}!"
+        "./app/title": "Astro",
+        "text/hello": "Salut, {0}!"
     }
 }

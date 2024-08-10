@@ -2,6 +2,13 @@
 import { z, defineCollection } from 'astro:content';
 
 /**
+ * Represents the constants.
+ */
+export const constants = {
+    "./app/title": "Astro!" as const
+} as const;
+
+/**
  * Represents the collections.
  */
 export const collections = {

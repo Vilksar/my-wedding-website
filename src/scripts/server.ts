@@ -3,6 +3,25 @@ import type { ImageMetadata } from "astro";
 import type { InferEntrySchema } from "astro:content";
 import { getCollection } from "astro:content";
 
+// Import the project scripts.
+import { constants } from "../content/config";
+
+/**
+ * Loads the logo.
+ * @returns The logo.
+ */
+async function loadLogo(): Promise<string> {
+    // Load the logo.
+    const { default: logo }: { default: string } = await import(`../../public/favicon.svg?raw`);
+    // Check if there is no logo.
+    if (logo === null || logo === undefined) {
+        // Throw an error.
+        throw new Error(`The logo does not exist.`);
+    }
+    // Return the logo.
+    return logo;
+}
+
 /**
  * Loads the icon IDs.
  * @returns The icon IDs.
@@ -119,6 +138,11 @@ function ensureEntryId(entry: { id: string, collection: string, data: { id: stri
     // Return true.
     return true;
 }
+
+/**
+ * Represents the logo.
+ */
+const logo = await loadLogo();
 
 /**
  * Represents the assets.
@@ -276,4 +300,28 @@ export function getLocalizedRoute(url: string, oldLanguageId: (string | undefine
     }
     // Return the URL with the language ID replaced.
     return url.replace(`/${oldLanguageId}/`, `/${newLanguageId}/`);
+}
+
+/**
+ * Gets the application logo.
+ * @returns The application logo.
+ */
+export function getAppLogo(): string {
+    // Return the logo.
+    return logo;
+}
+
+/**
+ * Gets the application title.
+ * @param languageId The language ID.
+ * @returns The application title.
+ */
+export function getAppTitle(languageId: (string | undefined)) {
+    // Check if there is no language ID provided.
+    if (languageId === null || languageId === undefined || languageId === "") {
+        // Return the default application title.
+        return constants["./app/title"];
+    }
+    // Return the translated application title.
+    return getTranslation(languageId, "./app/title")
 }

@@ -5,6 +5,7 @@
     "direction": "ltr",
     "nativeName": "English",
     "translations": {
-        "hello": "Hello, {0}!"
+        "./app/title": "Astro",
+        "text/hello": "Hello, {0}!"
     }
 }
