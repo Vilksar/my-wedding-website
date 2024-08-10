@@ -1,5 +1,2 @@
 # Enable line-ending normalization for text files.
 * text=auto
-
-# Enable Large-File-System support for image files.
-*.webp filter=lfs diff=lfs merge=lfs -text
