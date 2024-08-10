@@ -1,6 +1,109 @@
 // Import the Astro scripts.
+import type { ImageMetadata } from "astro";
 import type { InferEntrySchema } from "astro:content";
 import { getCollection } from "astro:content";
+
+/**
+ * Loads the icon IDs.
+ * @returns The icon IDs.
+ */
+function loadIconIds(): string[] {
+    // Define the path regular expression.
+    const pathRegExp = /^\.\.\/assets\/icons\/([\w\d\-]+)\.svg$/g;
+    // Define the icon IDs.
+    const iconIds = [];
+    // Load the paths.
+    const paths = Object.keys(import.meta.glob("../assets/icons/*.svg"));
+    // Go over each path.
+    for (const path of paths) {
+        // Get the match against the path regular expression.
+        const match = [...path.matchAll(pathRegExp)][0];
+        // Check if there is no match.
+        if (match === null || match === undefined) {
+            // Continue.
+            continue;
+        }
+        // Get the capture within the match.
+        const capture = match[1];
+        // Check if there is no capture.
+        if (capture === null || capture === undefined) {
+            // Continue.
+            continue;
+        }
+        // Add the capture to the icon IDs.
+        iconIds.push(capture);
+    }
+    // Return the icon IDs.
+    return iconIds;
+}
+
+/**
+ * Loads an icon by ID.
+ * @param iconId The icon ID.
+ * @returns The icon.
+ */
+async function loadIconById(iconId: string): Promise<string> {
+    // Get the icon.
+    const { default: icon }: { default: string } = await import(`../assets/icons/${iconId}.svg?raw`);
+    // Check if there is no icon.
+    if (icon === null || icon === undefined) {
+        // Throw an error.
+        throw new Error(`The icon with the ID "${iconId}" does not exist.`);
+    }
+    // Return the icon.
+    return icon;
+}
+
+/**
+ * Loads the image IDs.
+ * @returns The image IDs.
+ */
+function loadImageIds(): string[] {
+    // Define the path regular expression.
+    const pathRegExp = /^\.\.\/assets\/images\/([\w\d\-]+)\.webp$/g;
+    // Define the image IDs.
+    const imageIds = [];
+    // Load the paths.
+    const paths = Object.keys(import.meta.glob("../assets/images/*.webp"));
+    // Go over each path.
+    for (const path of paths) {
+        // Get the match against the path regular expression.
+        const match = [...path.matchAll(pathRegExp)][0];
+        // Check if there is no match.
+        if (match === null || match === undefined) {
+            // Continue.
+            continue;
+        }
+        // Get the capture within the match.
+        const capture = match[1];
+        // Check if there is no capture.
+        if (capture === null || capture === undefined) {
+            // Continue.
+            continue;
+        }
+        // Add the capture to the image IDs.
+        imageIds.push(capture);
+    }
+    // Return the image IDs.
+    return imageIds;
+}
+
+/**
+ * Loads an image by ID.
+ * @param imageId The image ID.
+ * @returns The image.
+ */
+async function loadImageById(imageId: string): Promise<ImageMetadata> {
+    // Load the image.
+    const { default: image }: { default: ImageMetadata } = await import(`../assets/images/${imageId}.webp`);
+    // Check if there is no image.
+    if (image === null || image === undefined) {
+        // Throw an error.
+        throw new Error(`The image with the ID "${imageId}" does not exist.`);
+    }
+    // Return the image.
+    return image;
+}
 
 /**
  * Ensures that an entry has a consistent ID.
@@ -18,6 +121,20 @@ function ensureEntryId(entry: { id: string, collection: string, data: { id: stri
 }
 
 /**
+ * Represents the assets.
+ */
+const assets = {
+    icons: await loadIconIds()
+        .reduce(async (accumulator, iconId) => ({
+            ...(await accumulator), [iconId]: await loadIconById(iconId)
+        }), Promise.resolve({} as { [key: string]: string })),
+    images: await loadImageIds()
+        .reduce(async (accumulator, imageId) => ({
+            ...(await accumulator), [imageId]: await loadImageById(imageId)
+        }), Promise.resolve({} as { [key: string]: ImageMetadata }))
+};
+
+/**
  * Represents the content.
  */
 const content = {
@@ -32,6 +149,38 @@ const content = {
         .toSorted((data1, data2) => data1.id.localeCompare(data2.id))
         .reduce((accumulator, data) => ({ ...accumulator, [data.id]: data }), {} as { [key: string]: InferEntrySchema<"languages"> }),
 };
+
+/**
+ * Gets an icon.
+ * @returns The icon.
+ */
+export function getIcon(iconId: string): string {
+    // Get the icon.
+    const icon = assets.icons[iconId];
+    // Check if there is no icon.
+    if (icon === null || icon === undefined) {
+        // Throw an error.
+        throw new Error(`An icon with the ID "${iconId}" does not exist.`);
+    }
+    // Return the icon.
+    return icon;
+}
+
+/**
+ * Gets an icon.
+ * @returns The icon.
+ */
+export function getImage(imageId: string): ImageMetadata {
+    // Get the image.
+    const image = assets.images[imageId];
+    // Check if there is no image.
+    if (image === null || image === undefined) {
+        // Throw an error.
+        throw new Error(`An image with the ID "${imageId}" does not exist.`);
+    }
+    // Return the image.
+    return image;
+}
 
 /**
  * Gets a color scheme.
