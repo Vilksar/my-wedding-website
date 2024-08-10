@@ -1,0 +1,28 @@
+---
+
+// Import the Astro scripts.
+import { Image } from "astro:assets";
+
+/**
+ * Represents the properties.
+ */
+interface Properties {
+
+    /**
+     * The data.
+     */
+    data: ImageMetadata;
+
+    /**
+     * The alternate text.
+     */
+    alternateText: string;
+
+}
+
+// Get the properties.
+const { data, alternateText, ...attributes } = Astro.props as Properties;
+
+---
+
+<Image {...attributes} src={data} alt={alternateText} data-component="image-by-data" />

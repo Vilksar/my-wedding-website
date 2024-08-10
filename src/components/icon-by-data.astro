@@ -1,0 +1,28 @@
+---
+
+/**
+ * Represents the properties.
+ */
+interface Properties {
+
+    /**
+     * The data.
+     */
+    data: string;
+
+    /**
+     * The alternate text.
+     */
+    alternateText: string;
+
+}
+
+// Get the properties.
+const { data, alternateText, ...attributes } = Astro.props as Properties;
+
+---
+
+<div {...attributes} data-component="icon-by-data">
+    <span class="sr-only">{alternateText}</span>
+    <Fragment set:html={data} />
+</div>
