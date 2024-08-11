@@ -1,14 +1,13 @@
 ---
 
 // Import the project scripts.
-import { getLanguages, getTranslation, getLocalizedRoute, getAppLogo, getAppTitle } from "../scripts/server";
+import { getLanguages, getTranslation, getLocalizedRoute, getAppTitle } from "../scripts/server";
 
 // Import the project layout.
 import type { Properties } from "../layouts/layout.astro";
 import Layout from "../layouts/layout.astro";
 
 // Import the project components.
-import IconByData from "../components/icon-by-data.astro";
 import ImageByData from "../components/image-by-data.astro";
 
 // Get the properties.
@@ -27,7 +26,7 @@ const properties: Properties = {
     <Fragment slot="content-text">
         <div class="flex-auto flex flex-col justify-center items-center w-full px-2">
             <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
-                <IconByData class:list="w-32 h-32 min-w-32 mx-1 light:fill-slate-900 dark:fill-slate-100" data={getAppLogo()} alternateText={getAppTitle(undefined)} />
+                <span class="mx-1 text-5xl font-cursive">{getAppTitle(undefined)}</span>
             </div>
             <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
                 {getLanguages().map(async (language) =>

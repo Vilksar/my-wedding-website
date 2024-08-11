@@ -8,10 +8,24 @@ export default {
 		"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
 	],
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				cursive: [
+					"DancingScript", "sans-serif"
+				]
+			}
+		}
 	},
 	plugins: [
-		plugin(function({addVariant}) {
+		plugin(function({ addBase }) {
+			addBase({
+				"@font-face": {
+					"font-family": `DancingScript`,
+					"src": `url("/src/assets/fonts/DancingScript.ttf")`
+				}
+			});
+		}),
+		plugin(function({ addVariant }) {
 			addVariant(`light`, `html[data-color-scheme="light"] &`);
 			addVariant(`dark`, `html[data-color-scheme="dark"] &`);
 		})
