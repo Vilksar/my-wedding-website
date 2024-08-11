@@ -15,7 +15,10 @@
         "layouts/layout/ui/menu": "Menu",
         "pages/index/title": "",
         "pages/index/text/chooseLanguage": "Choose a language:",
-        "pages/[languageId]/index/title": "",
-        "pages/[languageId]/index/text/hello": "Hello, {0}!"
+        "pages/[languageId]/index/title": "Home",
+        "pages/[languageId]/index/text/date": "July 5th, 2025",
+        "pages/[languageId]/about/title": "About",
+        "pages/[languageId]/about/text/hello": "Hello, {0}!",
+        "pages/[languageId]/about/text/goodbye": "Goodbye!"
     }
 }

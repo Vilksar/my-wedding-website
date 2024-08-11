@@ -88,7 +88,7 @@ const pageTitle = properties.title;
                             </div>
                         }
                         {(pageTitle !== null && pageTitle !== undefined && pageTitle !== "") &&
-                            <div class="text-5xl font-bold">
+                            <div class="text-5xl font-cursive font-bold">
                                 <span>{appTitle}</span>
                             </div>
                             <div class="text-3xl font-normal">
@@ -108,8 +108,14 @@ const pageTitle = properties.title;
                             <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
                                 <div class="flex flex-row justify-center items-center w-full max-w-80 p-2">
                                     <a href={getLocalizedRoute("/", undefined, properties.languageId)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(properties.languageId, "pages/[languageId]/index/title")}>
-                                        <IconByData class:list="w-6 h-6 min-w-6 mx-1 [&_g]:light:fill-slate-900 [&_g]:dark:fill-slate-100" data={appLogo} alt={getTranslation(properties.languageId, "pages/[languageId]/index/title")} />
+                                        <IconByData class:list="w-6 h-6 min-w-6 mx-1 [&_g]:light:fill-slate-900 [&_g]:dark:fill-slate-100" data={getIcon("home")} alt={getTranslation(properties.languageId, "pages/[languageId]/index/title")} />
                                         <span class="mx-1">{getTranslation(properties.languageId, "pages/[languageId]/index/title")}</span>
+                                    </a>
+                                </div>
+                                <div class="flex flex-row justify-center items-center w-full max-w-80 p-2">
+                                    <a href={getLocalizedRoute("/about/", undefined, properties.languageId)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(properties.languageId, "pages/[languageId]/about/title")}>
+                                        <IconByData class:list="w-6 h-6 min-w-6 mx-1 [&_g]:light:fill-slate-900 [&_g]:dark:fill-slate-100" data={getIcon("question-mark-circle")} alt={getTranslation(properties.languageId, "pages/[languageId]/about/title")} />
+                                        <span class="mx-1">{getTranslation(properties.languageId, "pages/[languageId]/about/title")}</span>
                                     </a>
                                 </div>
                             </div>

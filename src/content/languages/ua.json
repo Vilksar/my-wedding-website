@@ -15,7 +15,10 @@
         "layouts/layout/ui/menu": "Меню",
         "pages/index/title": "",
         "pages/index/text/chooseLanguage": "Виберіть мову:",
-        "pages/[languageId]/index/title": "",
-        "pages/[languageId]/index/text/hello": "Привіт, {0}!"
+        "pages/[languageId]/index/title": "Головна",
+        "pages/[languageId]/index/text/date": "5 липня 2025 року",
+        "pages/[languageId]/about/title": "Про",
+        "pages/[languageId]/about/text/hello": "Привіт, {0}!",
+        "pages/[languageId]/about/text/goodbye": "До побачення!"
     }
 }
