@@ -60,7 +60,7 @@ const pageTitle = properties.title;
                     <div class="flex flex-row justify-between items-center w-full py-5 px-5">
                         <div class="flex flex-row justify-start pointer-events-auto">
                             <a href={getLocalizedRoute("/", undefined, undefined)} class="flex flex-row justify-center items-center p-2 border rounded font-semibold text-lg uppercase light:text-slate-900 light:border-transparent light:hover:border-slate-500 dark:text-slate-100 dark:border-transparent dark:hover:border-slate-500" title={appTitle}>
-                                <IconByData class:list="w-6 h-6 min-w-6 mx-1 light:fill-slate-900 dark:fill-slate-100" data={appLogo} alternateText={appTitle} />
+                                <IconByData class:list="w-6 h-6 min-w-6 mx-1 [&_g]:light:fill-slate-900 [&_g]:dark:fill-slate-100" data={appLogo} alternateText={appTitle} />
                             </a>
                         </div>
                         <div class="flex flex-row justify-end pointer-events-auto">
@@ -108,7 +108,7 @@ const pageTitle = properties.title;
                             <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
                                 <div class="flex flex-row justify-center items-center w-full max-w-80 p-2">
                                     <a href={getLocalizedRoute("/", undefined, properties.languageId)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(properties.languageId, "pages/[languageId]/index/title")}>
-                                        <IconByData class:list="w-6 h-6 min-w-6 mx-1 light:fill-slate-900 dark:fill-slate-100" data={appLogo} alt={getTranslation(properties.languageId, "pages/[languageId]/index/title")} />
+                                        <IconByData class:list="w-6 h-6 min-w-6 mx-1 [&_g]:light:fill-slate-900 [&_g]:dark:fill-slate-100" data={appLogo} alt={getTranslation(properties.languageId, "pages/[languageId]/index/title")} />
                                         <span class="mx-1">{getTranslation(properties.languageId, "pages/[languageId]/index/title")}</span>
                                     </a>
                                 </div>
