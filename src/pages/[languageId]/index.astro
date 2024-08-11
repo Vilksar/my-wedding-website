@@ -51,7 +51,7 @@ const properties: Properties = {
         <ImageByData class:list="object-cover w-full h-full" data={getImage("astro")} alternateText={getTranslation(currentLanguage.id, "assets/images/astro")} />
     </Fragment>
     <Fragment slot="content-text">
-        <div class="flex-auto flex flex-col justify-start items-center w-full px-2">
+        <div class="relative z-10 flex-auto flex flex-col justify-center items-center w-full px-2">
             <p class="flex flex-row justify-center items-center my-2">
                 <ImageByData class:list="w-6 h-6 mx-1" data={currentLanguage.icon} alternateText="" />
                 <span class="mx-1 font-medium">{getTranslation(currentLanguage.id, `content/languages/${currentLanguage.id}`)}</span>

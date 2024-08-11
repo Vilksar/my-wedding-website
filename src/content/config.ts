@@ -5,7 +5,7 @@ import { z, defineCollection } from 'astro:content';
  * Represents the constants.
  */
 export const constants = {
-    "./app/title": "Astro!" as const
+    "./app/title": "Victor & Viktoriia" as const
 } as const;
 
 /**

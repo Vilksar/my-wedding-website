@@ -5,7 +5,7 @@
     "direction": "ltr",
     "nativeName": "Українська",
     "translations": {
-        "./app/title": "Астро",
+        "./app/title": "Віктор і Вікторія",
         "assets/images/astro": "",
         "content/colorSchemes/light": "Світла",
         "content/colorSchemes/dark": "Темна",
