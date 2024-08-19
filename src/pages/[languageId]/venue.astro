@@ -1,14 +1,11 @@
 ---
 
 // Import the project scripts.
-import { getImage, getLanguage, getLanguages, getTranslation, getAppTitle } from "../../scripts/server";
+import { getLanguage, getLanguages, getTranslation } from "../../scripts/server";
 
 // Import the project layout.
 import type { Properties } from "../../layouts/layout.astro";
 import Layout from "../../layouts/layout.astro";
-
-// Import the project components.
-import ImageByData from "../../components/image-by-data.astro";
 
 /**
  * Defines the static paths.
@@ -39,7 +36,7 @@ const currentLanguage = getLanguage(parameters.languageId);
 
 // Get the properties.
 const properties: Properties = {
-    title: getTranslation(currentLanguage.id, "pages/[languageId]/index/title"),
+    title: getTranslation(currentLanguage.id, "pages/[languageId]/venue/title"),
     languageId: currentLanguage.id,
     languageDirection: currentLanguage.direction,
 } as const;
@@ -51,19 +48,10 @@ const properties: Properties = {
         <div class="relative z-0 object-cover w-full h-full bg-gradient-to-br light:from-slate-500 light:to-slate-900 dark:from-slate-100 dark:to-slate-500" />
     </Fragment>
     <Fragment slot="content-text">
-        <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-top")} alternateText="" />
-        </div>
-        <div class="absolute bottom-0 left-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-bottom")} alternateText="" />
-        </div>
         <div class="relative z-10 flex-auto flex flex-col justify-center items-center w-full px-2">
-            <div class="w-full max-w-96 p-2 my-4 text-center">
-                <span class="mx-1 text-5xl font-cursive">{getAppTitle(currentLanguage.id)}</span>
-            </div>
-            <div class="w-full max-w-96 p-2 my-4 text-center">
-                <span class="mx-1 text-xl">{getTranslation(currentLanguage.id, "pages/[languageId]/index/text/date")}</span>
-            </div>
+            <p class="flex flex-col justify-center items-center my-2">
+                <span class="mx-1">{getTranslation(currentLanguage.id, "pages/[languageId]/venue/title")}</span>
+            </p>
         </div>
     </Fragment>
 </Layout>

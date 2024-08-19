@@ -12,13 +12,18 @@
         "content/languages/en": "Англійська",
         "content/languages/ro": "Румунська",
         "content/languages/ua": "Українська",
-        "layouts/layout/ui/menu": "Меню",
+        "layouts/layout/text/menu": "Меню",
+        "layouts/layout/text/developerMessage1": "Зроблено з ❤.",
+        "layouts/layout/text/developerMessage2": "Доступно на GitHub.",
         "pages/index/title": "",
         "pages/index/text/chooseLanguage": "Виберіть мову:",
-        "pages/[languageId]/index/title": "Головна",
-        "pages/[languageId]/index/text/date": "5 липня 2025 року",
-        "pages/[languageId]/about/title": "Про",
-        "pages/[languageId]/about/text/hello": "Привіт, {0}!",
-        "pages/[languageId]/about/text/goodbye": "До побачення!"
+        "pages/[languageId]/home/title": "Головна",
+        "pages/[languageId]/home/text/date": "5 липня 2025 року",
+        "pages/[languageId]/story/title": "Історія",
+        "pages/[languageId]/schedule/title": "Розклад",
+        "pages/[languageId]/travel/title": "Подорожі",
+        "pages/[languageId]/accommodation/title": "Проживання",
+        "pages/[languageId]/venue/title": "Місце проведення",
+        "pages/[languageId]/rsvp/title": "RSVP"
     }
 }

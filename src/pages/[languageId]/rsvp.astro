@@ -1,0 +1,57 @@
+---
+
+// Import the project scripts.
+import { getLanguage, getLanguages, getTranslation } from "../../scripts/server";
+
+// Import the project layout.
+import type { Properties } from "../../layouts/layout.astro";
+import Layout from "../../layouts/layout.astro";
+
+/**
+ * Defines the static paths.
+ * @returns The static paths.
+ */
+export async function getStaticPaths() {
+    // Return the static paths.
+    return getLanguages().map(language => ({ params: { languageId: language.id } }));
+}
+
+/**
+ * Represents the parameters.
+ */
+export type Parameters = {
+
+    /**
+     * The language ID.
+     */
+    languageId: string;
+
+};
+
+// Get the parameters.
+const parameters = Astro.params as Parameters;
+
+// Get the current language.
+const currentLanguage = getLanguage(parameters.languageId);
+
+// Get the properties.
+const properties: Properties = {
+    title: getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/title"),
+    languageId: currentLanguage.id,
+    languageDirection: currentLanguage.direction,
+} as const;
+
+---
+
+<Layout {...properties}>
+    <Fragment slot="content-image">
+        <div class="relative z-0 object-cover w-full h-full bg-gradient-to-br light:from-slate-500 light:to-slate-900 dark:from-slate-100 dark:to-slate-500" />
+    </Fragment>
+    <Fragment slot="content-text">
+        <div class="relative z-10 flex-auto flex flex-col justify-center items-center w-full px-2">
+            <p class="flex flex-col justify-center items-center my-2">
+                <span class="mx-1">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/title")}</span>
+            </p>
+        </div>
+    </Fragment>
+</Layout>

@@ -12,13 +12,18 @@
         "content/languages/en": "Engleză",
         "content/languages/ro": "Română",
         "content/languages/ua": "Ucraineană",
-        "layouts/layout/ui/menu": "Meniu",
+        "layouts/layout/text/menu": "Meniu",
+        "layouts/layout/text/developerMessage1": "Creat cu ❤.",
+        "layouts/layout/text/developerMessage2": "Disponibil pe GitHub.",
         "pages/index/title": "",
         "pages/index/text/chooseLanguage": "Alege o limbă:",
-        "pages/[languageId]/index/title": "Acasă",
-        "pages/[languageId]/index/text/date": "5 iulie 2025",
-        "pages/[languageId]/about/title": "Despre",
-        "pages/[languageId]/about/text/hello": "Salut, {0}!",
-        "pages/[languageId]/about/text/goodbye": "La revedere!"
+        "pages/[languageId]/home/title": "Acasă",
+        "pages/[languageId]/home/text/date": "5 iulie 2025",
+        "pages/[languageId]/story/title": "Poveste",
+        "pages/[languageId]/schedule/title": "Program",
+        "pages/[languageId]/travel/title": "Călătorie",
+        "pages/[languageId]/accommodation/title": "Cazare",
+        "pages/[languageId]/venue/title": "Locație",
+        "pages/[languageId]/rsvp/title": "RSVP"
     }
 }

@@ -21,6 +21,9 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
+        {/*
+            <ImageByData class:list="object-cover w-full h-full" data={getImage("astro")} alternateText={getTranslation(currentLanguage.id, "assets/images/astro")} />
+         */}
         <div class="relative z-0 object-cover w-full h-full bg-gradient-to-br light:from-slate-500 light:to-slate-900 dark:from-slate-100 dark:to-slate-500" />
     </Fragment>
     <Fragment slot="content-text">
@@ -44,7 +47,7 @@ const properties: Properties = {
             <div class="flex flex-col justify-center items-center w-full max-w-80 p-2 my-4">
                 {getLanguages().map(async (language) =>
                     <div class="flex flex-row justify-center items-center w-full p-2" lang={language.id} dir={language.direction}>
-                        <a href={getLocalizedRoute("/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(language.id, `content/languages/${language.id}`)}>
+                        <a href={getLocalizedRoute("/home/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:text-slate-900 light:hover:text-slate-600 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:text-slate-100 dark:hover:text-slate-400" title={getTranslation(language.id, `content/languages/${language.id}`)}>
                             <ImageByData class:list="w-6 h-6 min-w-6 mx-1" data={language.icon} alternateText={getTranslation(language.id, `content/languages/${language.id}`)} />
                             <span class="mx-1">{getTranslation(language.id, `content/languages/${language.id}`)}</span>
                         </a>

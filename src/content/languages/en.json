@@ -12,13 +12,18 @@
         "content/languages/en": "English",
         "content/languages/ro": "Romanian",
         "content/languages/ua": "Ukrainian",
-        "layouts/layout/ui/menu": "Menu",
+        "layouts/layout/text/menu": "Menu",
+        "layouts/layout/text/developerMessage1": "Made with ❤.",
+        "layouts/layout/text/developerMessage2": "Available on GitHub.",
         "pages/index/title": "",
         "pages/index/text/chooseLanguage": "Choose a language:",
-        "pages/[languageId]/index/title": "Home",
-        "pages/[languageId]/index/text/date": "July 5th, 2025",
-        "pages/[languageId]/about/title": "About",
-        "pages/[languageId]/about/text/hello": "Hello, {0}!",
-        "pages/[languageId]/about/text/goodbye": "Goodbye!"
+        "pages/[languageId]/home/title": "Home",
+        "pages/[languageId]/home/text/date": "July 5th, 2025",
+        "pages/[languageId]/story/title": "Story",
+        "pages/[languageId]/schedule/title": "Schedule",
+        "pages/[languageId]/travel/title": "Travel",
+        "pages/[languageId]/accommodation/title": "Accomodation",
+        "pages/[languageId]/venue/title": "Venue",
+        "pages/[languageId]/rsvp/title": "RSVP"
     }
 }
