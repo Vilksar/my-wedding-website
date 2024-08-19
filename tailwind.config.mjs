@@ -11,7 +11,7 @@ export default {
 		extend: {
 			fontFamily: {
 				cursive: [
-					"DancingScript", "sans-serif"
+					"GreatVibes", "sans-serif"
 				]
 			}
 		}
@@ -20,8 +20,8 @@ export default {
 		plugin(function({ addBase }) {
 			addBase({
 				"@font-face": {
-					"font-family": `DancingScript`,
-					"src": `url("/src/assets/fonts/DancingScript.ttf")`
+					"font-family": `GreatVibes`,
+					"src": `url("/src/assets/fonts/GreatVibes.ttf")`
 				}
 			});
 		}),
