@@ -22,7 +22,7 @@
         "pages/[languageId]/story/title": "Story",
         "pages/[languageId]/schedule/title": "Schedule",
         "pages/[languageId]/travel/title": "Travel",
-        "pages/[languageId]/accommodation/title": "Accomodation",
+        "pages/[languageId]/accommodation/title": "Accommodation",
         "pages/[languageId]/venue/title": "Venue",
         "pages/[languageId]/rsvp/title": "RSVP"
     }
