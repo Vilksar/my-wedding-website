@@ -43,7 +43,7 @@ The logo has been created using:
 
 * Canva - [https://www.canva.com/](https://www.canva.com/)
 * Figma - [https://www.figma.com/](https://www.figma.com/)
-* SCGOMG - [https://svgomg.net/](https://svgomg.net/)
+* SVGOMG - [https://svgomg.net/](https://svgomg.net/)
 
 The resources have been included from:    
 
