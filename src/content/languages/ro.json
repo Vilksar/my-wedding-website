@@ -23,6 +23,7 @@
         "pages/[languageId]/schedule/title": "Program",
         "pages/[languageId]/travel/title": "Călătorie",
         "pages/[languageId]/accommodation/title": "Cazare",
+        "pages/[languageId]/city/title": "Oraș",
         "pages/[languageId]/venue/title": "Locație",
         "pages/[languageId]/rsvp/title": "RSVP"
     }

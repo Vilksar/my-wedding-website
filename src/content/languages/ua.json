@@ -23,6 +23,7 @@
         "pages/[languageId]/schedule/title": "Розклад",
         "pages/[languageId]/travel/title": "Подорожі",
         "pages/[languageId]/accommodation/title": "Проживання",
+        "pages/[languageId]/city/title": "Місто",
         "pages/[languageId]/venue/title": "Місце проведення",
         "pages/[languageId]/rsvp/title": "RSVP"
     }
