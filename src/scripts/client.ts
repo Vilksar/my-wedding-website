@@ -17,12 +17,12 @@ function setColorSchemeAfterLoad(colorScheme: string): void {
     // Go over each color scheme button.
     window.document.querySelectorAll<HTMLButtonElement>(`button[data-color-scheme]`).forEach((colorSchemeButton) => {
         // Mark the button as inactive.
-        colorSchemeButton.setAttribute("data-is-active", "false");
+        colorSchemeButton.setAttribute("data-color-scheme-is-active", "false");
     });
     // Go over each matching color scheme button.
     window.document.querySelectorAll<HTMLButtonElement>(`button[data-color-scheme="${colorScheme}"]`).forEach((colorSchemeButton) => {
         // Mark the button as active.
-        colorSchemeButton.setAttribute("data-is-active", "true");
+        colorSchemeButton.setAttribute("data-color-scheme-is-active", "true");
     });
     // Try to store the color scheme to local storage.
     try {
