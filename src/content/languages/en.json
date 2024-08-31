@@ -19,11 +19,13 @@
         "pages/index/text/chooseLanguage": "Choose a language:",
         "pages/[languageId]/home/title": "Home",
         "pages/[languageId]/home/text/date": "July 5th, 2025",
+        "pages/[languageId]/home/text/location": "Turku, Finland",
+        "pages/[languageId]/home/text/findOutMore": "Find Out More",
+        "pages/[languageId]/home/text/rsvp": "RSVP",
         "pages/[languageId]/story/title": "Story",
         "pages/[languageId]/schedule/title": "Schedule",
         "pages/[languageId]/travel/title": "Travel",
         "pages/[languageId]/accommodation/title": "Accommodation",
-        "pages/[languageId]/city/title": "City",
         "pages/[languageId]/venue/title": "Venue",
         "pages/[languageId]/rsvp/title": "RSVP"
     }

@@ -19,11 +19,13 @@
         "pages/index/text/chooseLanguage": "Виберіть мову:",
         "pages/[languageId]/home/title": "Головна",
         "pages/[languageId]/home/text/date": "5 липня 2025 року",
+        "pages/[languageId]/home/text/location": "Турку, Фінляндія",
+        "pages/[languageId]/home/text/findOutMore": "Дізнайтеся більше",
+        "pages/[languageId]/home/text/rsvp": "RSVP",
         "pages/[languageId]/story/title": "Історія",
         "pages/[languageId]/schedule/title": "Розклад",
         "pages/[languageId]/travel/title": "Подорожі",
         "pages/[languageId]/accommodation/title": "Проживання",
-        "pages/[languageId]/city/title": "Місто",
         "pages/[languageId]/venue/title": "Місце проведення",
         "pages/[languageId]/rsvp/title": "RSVP"
     }

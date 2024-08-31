@@ -19,11 +19,13 @@
         "pages/index/text/chooseLanguage": "Alege o limbă:",
         "pages/[languageId]/home/title": "Acasă",
         "pages/[languageId]/home/text/date": "5 iulie 2025",
+        "pages/[languageId]/home/text/location": "Turku, Finlanda",
+        "pages/[languageId]/home/text/findOutMore": "Află Mai Multe",
+        "pages/[languageId]/home/text/rsvp": "RSVP",
         "pages/[languageId]/story/title": "Poveste",
         "pages/[languageId]/schedule/title": "Program",
         "pages/[languageId]/travel/title": "Călătorie",
         "pages/[languageId]/accommodation/title": "Cazare",
-        "pages/[languageId]/city/title": "Oraș",
         "pages/[languageId]/venue/title": "Locație",
         "pages/[languageId]/rsvp/title": "RSVP"
     }
