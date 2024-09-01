@@ -1,11 +1,14 @@
 ---
 
 // Import the project scripts.
-import { getLanguage, getLanguages, getTranslation } from "../../scripts/build";
+import { getImage, getLanguage, getLanguages, getTranslation } from "../../scripts/build";
 
 // Import the project layout.
 import type { Properties } from "../../layouts/layout.astro";
 import Layout from "../../layouts/layout.astro";
+
+// Import the project components.
+import ImageByData from "../../components/image-by-data.astro";
 
 /**
  * Defines the static paths.
@@ -45,14 +48,23 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
-        <div class="relative z-0 object-cover w-full h-full bg-gradient-to-br light:from-slate-200 light:to-slate-500 dark:from-slate-500 dark:to-slate-800" />
+        <div class="relative z-0 w-full h-full">
+            <!-- <ImageByData class:list="object-cover w-full h-full" data={getImage("accommodation")} alternateText={getTranslation(currentLanguage.id, "assets/images/accommodation")} /> -->
+            <div class="object-cover w-full h-full bg-gradient-to-br light:from-slate-200 light:to-slate-500 dark:from-slate-500 dark:to-slate-800" />
+        </div>
     </Fragment>
     <Fragment slot="content-text">
+        <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
+            <ImageByData data={getImage("detail-top")} alternateText="" />
+        </div>
+        <div class="absolute bottom-0 left-0 z-0 flex flex-row m-0 p-0">
+            <ImageByData data={getImage("detail-bottom")} alternateText="" />
+        </div>
         <div class="relative z-10 flex-auto flex flex-col justify-center items-center h-full w-full px-2">
             <div class="w-full max-w-96 m-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
                 <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
                     <div class="w-full mx-1 my-1">
-                        <span class="text-3xl font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/accommodation/title")}</span>
+                        <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/accommodation/title")}</span>
                     </div>
                 </div>
             </div>

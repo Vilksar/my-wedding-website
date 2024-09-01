@@ -21,10 +21,10 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
-        {/*
-            <ImageByData class:list="object-cover w-full h-full" data={getImage("astro")} alternateText={getTranslation(currentLanguage.id, "assets/images/astro")} />
-         */}
-        <div class="relative z-0 object-cover w-full h-full bg-gradient-to-br light:from-slate-200 light:to-slate-500 dark:from-slate-500 dark:to-slate-800" />
+        <div class="relative z-0 w-full h-full">
+            <!-- <ImageByData class:list="object-cover w-full h-full" data={getImage("index")} alternateText="" /> -->
+            <div class="object-cover w-full h-full bg-gradient-to-br light:from-slate-200 light:to-slate-500 dark:from-slate-500 dark:to-slate-800" />
+        </div>
     </Fragment>
     <Fragment slot="content-text">
         <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
