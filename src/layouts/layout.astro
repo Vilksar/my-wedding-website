@@ -69,7 +69,7 @@ const pages = [
             <header class="fixed top-0 left-0 z-30 flex flex-col lg:flex-row w-full pointer-events-none bg-transparent light:text-slate-900 dark:text-slate-100">
                 <div class="basis-auto lg:basis-2/3 flex lg:flex flex-col w-full">
                     <div class="flex flex-row justify-end items-center w-full p-5">
-                        <button class="flex flex-row justify-center items-center p-2 border rounded pointer-events-auto light:border-slate-300 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:group-data-[body-is-menu-toggled=true]/body:bg-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:group-data-[body-is-menu-toggled=true]/body:bg-slate-800" data-body="menu-toggle" title={getTranslation(properties.languageId, "layouts/layout/text/menu")}>
+                        <button class="flex flex-row justify-center items-center p-2 border rounded pointer-events-auto light:border-slate-300 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:group-data-[body-is-menu-toggled=true]/body:bg-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:group-data-[body-is-menu-toggled=true]/body:bg-slate-800" data-body="menu-toggle">
                             <div class="flex group-data-[body-is-menu-toggled=true]/body:hidden flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("menu")} alternateText="" />
                             </div>
@@ -94,15 +94,15 @@ const pages = [
                     <div class="absolute z-10 bottom-10 left-10 flex flex-col mr-20 py-2 px-5 rounded light:bg-slate-100/30 dark:bg-slate-900/30">
                         {(pageTitle === null || pageTitle === undefined || pageTitle === "") &&
                             <div class="w-full mx-2 my-1">
-                                <span class="text-5xl font-semibold">{appTitle}</span>
+                                <span class="text-5xl font-cursive font-semibold">{appTitle}</span>
                             </div>
                         }
                         {(pageTitle !== null && pageTitle !== undefined && pageTitle !== "") &&
                             <div class="w-full mx-2 my-1">
-                                <span class="text-5xl font-semibold">{appTitle}</span>
+                                <span class="text-5xl font-cursive font-semibold">{appTitle}</span>
                             </div>
                             <div class="w-full mx-2 my-1">
-                                <span class="text-3xl font-normal">{pageTitle}</span>
+                                <span class="text-3xl font-cursive font-normal">{pageTitle}</span>
                             </div>
                         }
                     </div>
@@ -118,9 +118,9 @@ const pages = [
                             <div class="flex flex-col justify-center items-center w-full max-w-96 mx-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
                                 <div class="flex-none flex flex-col justify-center items-center w-full py-4 text-center">
                                     <div class="w-auto mx-1 my-1">
-                                        <a href={getLocalizedRoute("/", undefined, undefined)} class="flex flex-row justify-center items-center p-2 border rounded light:border-transparent light:hover:border-slate-500 dark:border-transparent dark:hover:border-slate-500 [&_path.favicon-fill]:light:stroke-slate-900 [&_path.favicon-fill]:light:fill-slate-900 [&_path.favicon-stroke]:light:stroke-slate-900 [&_path.favicon-stroke]:light:fill-none [&_path.favicon-fill]:dark:stroke-slate-100 [&_path.favicon-fill]:dark:fill-slate-100 [&_path.favicon-stroke]:dark:stroke-slate-100 [&_path.favicon-stroke]:dark:fill-none" title={appTitle}>
+                                        <a href={getLocalizedRoute("/", undefined, undefined)} class="flex flex-row justify-center items-center p-2 border rounded light:border-transparent light:hover:border-slate-500 dark:border-transparent dark:hover:border-slate-500 [&_path.favicon-fill]:light:stroke-slate-900 [&_path.favicon-fill]:light:fill-slate-900 [&_path.favicon-stroke]:light:stroke-slate-900 [&_path.favicon-stroke]:light:fill-none [&_path.favicon-fill]:dark:stroke-slate-100 [&_path.favicon-fill]:dark:fill-slate-100 [&_path.favicon-stroke]:dark:stroke-slate-100 [&_path.favicon-stroke]:dark:fill-none">
                                             <div class="flex flex-row justify-center items-center w-full mx-1">
-                                                <IconByData class:list="w-32 h-32 min-w-32" data={appLogo} alternateText="" />
+                                                <IconByData class:list="w-32 h-32 min-w-32" data={appLogo} alternateText={appTitle} />
                                             </div>
                                         </a>
                                     </div>
@@ -128,7 +128,7 @@ const pages = [
                                 <div class="flex-auto flex flex-col justify-center items-center w-full py-16 text-center">
                                     {pages.map((page) =>
                                         <div class="w-full mx-1 my-1">
-                                            <a href={getLocalizedRoute(`/${page.id}/`, undefined, properties.languageId)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-200 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-800 [&_svg]:light:fill-slate-900 [&_svg]:dark:fill-slate-100" title={getTranslation(properties.languageId!, `pages/[languageId]/${page.id}/title`)}>
+                                            <a href={getLocalizedRoute(`/${page.id}/`, undefined, properties.languageId)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-200 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-800 [&_svg]:light:fill-slate-900 [&_svg]:dark:fill-slate-100">
                                                 <div class="basis-1/6 flex flex-row justify-center items-center w-full mx-1">
                                                     <IconByData class:list="w-6 h-6 min-w-6" data={getIcon(page.icon)} alt="" />
                                                 </div>
@@ -143,7 +143,7 @@ const pages = [
                                     <div class="flex flex-row justify-center items-center" data-component="color-schemes">
                                         {getColorSchemes().map((colorScheme) =>
                                             <div class="w-full mx-[0.1rem] my-1">
-                                                <button type="button" class="flex flex-row justify-center items-center p-2 border rounded light:border-slate-300 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:data-[color-scheme-is-active=true]:bg-slate-200 light:data-[color-scheme-is-active=true]:border-slate-300 light:data-[color-scheme-is-active=true]:hover:bg-slate-200 light:data-[color-scheme-is-active=true]:hover:border-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:data-[color-scheme-is-active=true]:bg-slate-800 dark:data-[color-scheme-is-active=true]:border-slate-700 dark:data-[color-scheme-is-active=true]:hover:bg-slate-800 dark:data-[color-scheme-is-active=true]:hover:border-slate-400" data-color-scheme={colorScheme.id} data-color-scheme-is-active="false" title={getTranslation(properties.languageId!, `content/colorSchemes/${colorScheme.id}`)}>
+                                                <button type="button" class="flex flex-row justify-center items-center p-2 border rounded light:border-slate-300 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:data-[color-scheme-is-active=true]:bg-slate-200 light:data-[color-scheme-is-active=true]:border-slate-300 light:data-[color-scheme-is-active=true]:hover:bg-slate-200 light:data-[color-scheme-is-active=true]:hover:border-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:data-[color-scheme-is-active=true]:bg-slate-800 dark:data-[color-scheme-is-active=true]:border-slate-700 dark:data-[color-scheme-is-active=true]:hover:bg-slate-800 dark:data-[color-scheme-is-active=true]:hover:border-slate-400" data-color-scheme={colorScheme.id} data-color-scheme-is-active="false">
                                                     <div class="flex flex-row justify-center items-center mx-1">
                                                         <ImageByData class:list="w-6 h-6 min-w-6" data={colorScheme.icon} alternateText={getTranslation(properties.languageId!, `content/colorSchemes/${colorScheme.id}`)} />
                                                     </div>
@@ -154,7 +154,7 @@ const pages = [
                                     <div class="flex flex-row justify-center items-center" data-component="languages">
                                         {getLanguages().map((language) =>
                                             <div class="w-full mx-[0.1rem] my-1">
-                                                <a href={getLocalizedRoute(Astro.url.pathname, properties.languageId, language.id)} class="flex flex-row justify-center items-center p-2 border rounded light:border-slate-300 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:data-[language-is-active=true]:bg-slate-200 light:data-[language-is-active=true]:border-slate-300 light:data-[language-is-active=true]:hover:bg-slate-200 light:data-[language-is-active=true]:hover:border-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:data-[language-is-active=true]:bg-slate-800 dark:data-[language-is-active=true]:border-slate-700 dark:data-[language-is-active=true]:hover:bg-slate-800 dark:data-[language-is-active=true]:hover:border-slate-400" data-language={language.id} data-language-is-active={`${language.id === properties.languageId}`} title={getTranslation(properties.languageId!, `content/languages/${language.id}`)}>
+                                                <a href={getLocalizedRoute(Astro.url.pathname, properties.languageId, language.id)} class="flex flex-row justify-center items-center p-2 border rounded light:border-slate-300 light:bg-slate-100 light:hover:border-slate-600 light:hover:bg-slate-100 light:data-[language-is-active=true]:bg-slate-200 light:data-[language-is-active=true]:border-slate-300 light:data-[language-is-active=true]:hover:bg-slate-200 light:data-[language-is-active=true]:hover:border-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-400 dark:hover:bg-slate-900 dark:data-[language-is-active=true]:bg-slate-800 dark:data-[language-is-active=true]:border-slate-700 dark:data-[language-is-active=true]:hover:bg-slate-800 dark:data-[language-is-active=true]:hover:border-slate-400" data-language={language.id} data-language-is-active={`${language.id === properties.languageId}`}>
                                                     <div class="flex flex-row justify-center items-center mx-1">
                                                         <ImageByData class:list="w-6 h-6 min-w-6" data={language.icon} alternateText={getTranslation(properties.languageId!, `content/languages/${language.id}`)} />
                                                     </div>
@@ -165,11 +165,11 @@ const pages = [
                                 </div>
                                 <div class="flex-none flex flex-col justify-center items-center w-full py-4 text-center">
                                     <div class="w-auto mx-1 my-0">
-                                        <span class="text-xs font-normal">{getTranslation(properties.languageId, "layouts/layout/text/developerMessage1")}</span>
+                                        <span class="text-xs font-normal">{getTranslation(properties.languageId, "layouts/layout/text/madeWithLove")}</span>
                                     </div>
                                     <div class="w-auto mx-1 my-0">
                                         <a href="https://github.com/Vilksar/my-wedding-website" target="_blank" class="light:hover:text-slate-500 dark:hover:text-slate-500">
-                                            <span class="text-xs font-normal underline">{getTranslation(properties.languageId, "layouts/layout/text/developerMessage2")}</span>
+                                            <span class="text-xs font-normal underline">{getTranslation(properties.languageId, "layouts/layout/text/availableOnGitHub")}</span>
                                         </a>
                                     </div>
                                 </div>

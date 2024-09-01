@@ -35,27 +35,27 @@ const properties: Properties = {
         </div>
         <div class="relative z-10 flex-auto flex flex-col justify-center items-center h-full w-full px-2">
             <div class="w-full max-w-96 mx-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-8 text-center">
+                <div class="flex flex-col justify-center items-center w-full pt-4 pb-6 text-center">
                     <div class="w-full mx-1 my-1">
                         <span class="text-5xl font-cursive">{getAppTitle(undefined)}</span>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center items-center w-full pt-8 pb-4 text-center">
+                <div class="flex flex-col justify-center items-center w-full pt-6 pb-4 text-center">
                     {getLanguages().map(async (language) =>
                         <div class="w-full mx-1 my-0" lang={language.id} dir={language.direction}>
-                            <span class="text-lg font-semibold">{getTranslation(language.id, "pages/index/text/chooseLanguage")}</span>
+                            <span class="text-xl font-light">{getTranslation(language.id, "pages/index/text/chooseLanguage")}</span>
                         </div>
                     )}
                 </div>
                 <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
                     {getLanguages().map(async (language) =>
                         <div class="w-full mx-1 my-1" lang={language.id} dir={language.direction}>
-                            <a href={getLocalizedRoute("/home/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100" title={getTranslation(language.id, `content/languages/${language.id}`)}>
+                            <a href={getLocalizedRoute("/home/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
                                 <div class="flex flex-row justify-center items-center mx-1">
                                     <ImageByData class:list="w-6 h-6 min-w-6" data={language.icon} alternateText="" />
                                 </div>
                                 <div class="flex flex-row justify-center items-center mx-1">
-                                    <span class="text-base font-normal">{getTranslation(language.id, `content/languages/${language.id}`)}</span>
+                                    <span class="text-base font-semibold">{getTranslation(language.id, `content/languages/${language.id}`)}</span>
                                 </div>
                             </a>
                         </div>
