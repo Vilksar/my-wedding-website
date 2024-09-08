@@ -325,3 +325,18 @@ export function getAppTitle(languageId: (string | undefined)) {
     // Return the translated application title.
     return getTranslation(languageId, "./app/title")
 }
+
+/**
+ * Gets the application subtitle.
+ * @param languageId The language ID.
+ * @returns The application subtitle.
+ */
+export function getAppSubtitle(languageId: (string | undefined)) {
+    // Check if there is no language ID provided.
+    if (languageId === null || languageId === undefined || languageId === "") {
+        // Return the default application subtitle.
+        return constants["./app/subtitle"];
+    }
+    // Return the translated application subtitle.
+    return getTranslation(languageId, "./app/subtitle")
+}

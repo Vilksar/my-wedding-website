@@ -40,7 +40,7 @@ const currentLanguage = getLanguage(parameters.languageId);
 
 // Get the properties.
 const properties: Properties = {
-    title: getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/title"),
+    pageId: "rsvp",
     languageId: currentLanguage.id,
     languageDirection: currentLanguage.direction,
 } as const;
@@ -179,7 +179,7 @@ const properties: Properties = {
                         </div>
                         <div class="group/form-submit flex flex-col justify-center items-center w-full my-2" data-component="form-submit" data-form-submit-is-valid="unknown">
                             <div class="w-full mx-1 my-0" data-form-submit="button">
-                                <button type="submit" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 light:disabled:border-slate-400 light:disabled:bg-slate-200 light:disabled:text-slate-400 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100 dark:disabled:border-slate-600 dark:disabled:bg-slate-800 dark:disabled:text-slate-600" disabled="disabled">
+                                <button type="submit" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 light:disabled:border-slate-400 light:disabled:bg-slate-200 light:disabled:text-slate-400 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700 dark:disabled:border-slate-600 dark:disabled:bg-slate-800 dark:disabled:text-slate-600" disabled="disabled">
                                     <div class="flex flex-row justify-center items-center mx-1">
                                         <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("mark-as-unread")} alternateText="" />
                                     </div>

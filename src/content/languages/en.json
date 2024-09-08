@@ -6,7 +6,7 @@
     "nativeName": "English",
     "translations": {
         "./app/title": "Victor and Viktoriia",
-        "./app/date": "July 5th, 2025",
+        "./app/subtitle": "July 5th, 2025",
         "content/colorSchemes/light": "Light",
         "content/colorSchemes/dark": "Dark",
         "content/languages/en": "English",

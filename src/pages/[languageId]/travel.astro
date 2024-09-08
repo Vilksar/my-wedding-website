@@ -40,7 +40,7 @@ const currentLanguage = getLanguage(parameters.languageId);
 
 // Get the properties.
 const properties: Properties = {
-    title: getTranslation(currentLanguage.id, "pages/[languageId]/travel/title"),
+    pageId: "travel",
     languageId: currentLanguage.id,
     languageDirection: currentLanguage.direction,
 } as const;
@@ -79,7 +79,7 @@ const properties: Properties = {
                         <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/hotels")}</span>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.sokoshotels.fi/en/reservation/collection/TURKU?startDate=2025-07-04&endDate=2025-07-07&adults=2&numberOfRooms=1&promotionCode=" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.sokoshotels.fi/en/reservation/collection/TURKU?startDate=2025-07-04&endDate=2025-07-07&adults=2&numberOfRooms=1&promotionCode=" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
                             </div>
@@ -92,7 +92,7 @@ const properties: Properties = {
                         </a>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.scandichotels.com/hotelreservation/select-hotel?city=TURKU&fromDate=2025-07-4&toDate=2025-07-7&room%5b0%5d.adults=2&bookingCode=" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.scandichotels.com/hotelreservation/select-hotel?city=TURKU&fromDate=2025-07-4&toDate=2025-07-7&room%5b0%5d.adults=2&bookingCode=" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
                             </div>
@@ -110,7 +110,7 @@ const properties: Properties = {
                         <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/websites")}</span>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.booking.com/searchresults.html?ss=Turku%2C+Southern+Finland%2C+Finland&dest_id=-1389822&checkin=2025-07-04&checkout=2025-07-07&group_adults=2&no_rooms=1&group_children=0&flex_window=1" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.booking.com/searchresults.html?ss=Turku%2C+Southern+Finland%2C+Finland&dest_id=-1389822&checkin=2025-07-04&checkout=2025-07-07&group_adults=2&no_rooms=1&group_children=0&flex_window=1" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("laptop-windows")} alternateText="" />
                             </div>
@@ -123,7 +123,7 @@ const properties: Properties = {
                         </a>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.airbnb.com/s/Turku--Finland/homes?query=Turku%2C%20Finland&checkin=2025-07-04&checkout=2025-07-07&adults=2" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.airbnb.com/s/Turku--Finland/homes?query=Turku%2C%20Finland&checkin=2025-07-04&checkout=2025-07-07&adults=2" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("laptop-windows")} alternateText="" />
                             </div>
@@ -141,7 +141,7 @@ const properties: Properties = {
                         <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/towns")}</span>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Kaarina/@60.4106184,22.3529758,14z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.google.com/maps/place/Kaarina/@60.4106184,22.3529758,14z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
                             </div>
@@ -154,7 +154,7 @@ const properties: Properties = {
                         </a>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Raisio/@60.4834247,22.1314979,14z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.google.com/maps/place/Raisio/@60.4834247,22.1314979,14z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
                             </div>
@@ -167,7 +167,7 @@ const properties: Properties = {
                         </a>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Naantali/@60.4120367,21.6417184,11z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.google.com/maps/place/Naantali/@60.4120367,21.6417184,11z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
                             </div>
@@ -180,7 +180,7 @@ const properties: Properties = {
                         </a>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/21600+Pargas/@60.3010922,22.2919416,15z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.google.com/maps/place/21600+Pargas/@60.3010922,22.2919416,15z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
                             </div>
@@ -193,7 +193,7 @@ const properties: Properties = {
                         </a>
                     </div>
                     <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Salo/@60.3898507,23.0874524,13z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                        <a href="https://www.google.com/maps/place/Salo/@60.3898507,23.0874524,13z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
                             <div class="flex flex-row justify-center items-center mx-1">
                                 <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
                             </div>

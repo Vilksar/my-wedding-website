@@ -39,7 +39,7 @@ const currentLanguage = getLanguage(parameters.languageId);
 
 // Get the properties.
 const properties: Properties = {
-    title: getTranslation(currentLanguage.id, "pages/[languageId]/story/title"),
+    pageId: "story",
     languageId: currentLanguage.id,
     languageDirection: currentLanguage.direction,
 } as const;

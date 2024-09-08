@@ -6,7 +6,7 @@
     "nativeName": "Українська",
     "translations": {
         "./app/title": "Віктор і Вікторія",
-        "./app/date": "5 липня 2025 року",
+        "./app/subtitle": "5 липня 2025 року",
         "content/colorSchemes/light": "Світла",
         "content/colorSchemes/dark": "Темна",
         "content/languages/en": "Англійська",

@@ -6,7 +6,7 @@
     "nativeName": "Română",
     "translations": {
         "./app/title": "Victor și Viktoriia",
-        "./app/date": "5 iulie 2025",
+        "./app/subtitle": "5 iulie 2025",
         "content/colorSchemes/light": "Lumină",
         "content/colorSchemes/dark": "Întuneric",
         "content/languages/en": "Engleză",
