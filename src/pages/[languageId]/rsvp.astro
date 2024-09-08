@@ -1,13 +1,14 @@
 ---
 
 // Import the project scripts.
-import { getImage, getLanguage, getLanguages, getTranslation } from "../../scripts/build";
+import { getIcon, getImage, getLanguage, getLanguages, getTranslation } from "../../scripts/build";
 
 // Import the project layout.
 import type { Properties } from "../../layouts/layout.astro";
 import Layout from "../../layouts/layout.astro";
 
 // Import the project components.
+import IconByData from "../../components/icon-by-data.astro";
 import ImageByData from "../../components/image-by-data.astro";
 
 /**
@@ -180,8 +181,18 @@ const properties: Properties = {
                         <div class="group/form-submit flex flex-col justify-center items-center w-full my-2" data-component="form-submit" data-form-submit-is-valid="unknown">
                             <div class="w-full mx-1 my-0" data-form-submit="button">
                                 <button type="submit" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 light:disabled:border-slate-400 light:disabled:bg-slate-200 light:disabled:text-slate-400 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100 dark:disabled:border-slate-600 dark:disabled:bg-slate-800 dark:disabled:text-slate-600" disabled="disabled">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/submit/name")}</span>
+                                    <div class="flex flex-row justify-center items-center mx-1">
+                                        <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("mark-as-unread")} alternateText="" />
+                                    </div>
+                                    <div class="flex flex-row justify-center items-center mx-1">
+                                        <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/submit/name")}</span>
+                                    </div>
                                 </button>
+                            </div>
+                            <div class="w-full mx-1 my-0" data-form-submit="warning">
+                                <div class="flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-yellow-700 light:bg-yellow-200 light:text-yellow-700 dark:border-yellow-300 dark:bg-yellow-800 dark:text-yellow-300">
+                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/submit/warning")}</span>
+                                </div>
                             </div>
                             <div class="w-full mx-1 my-0" data-form-submit="error">
                                 <div class="hidden group-data-[form-submit-is-valid=false]/form-submit:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">

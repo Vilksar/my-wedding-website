@@ -1,13 +1,14 @@
 ---
 
 // Import the project scripts.
-import { getImage, getLanguage, getLanguages, getTranslation } from "../../scripts/build";
+import { getIcon, getImage, getLanguage, getLanguages, getTranslation } from "../../scripts/build";
 
 // Import the project layout.
 import type { Properties } from "../../layouts/layout.astro";
 import Layout from "../../layouts/layout.astro";
 
 // Import the project components.
+import IconByData from "../../components/icon-by-data.astro";
 import ImageByData from "../../components/image-by-data.astro";
 
 /**
@@ -65,6 +66,31 @@ const properties: Properties = {
                 <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
                     <div class="w-full mx-1 my-1">
                         <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/venue/title")}</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
+                    <div class="w-full mx-1 my-1">
+                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/venue/text/message")}</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
+                    <div class="w-full mx-1 my-1">
+                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/venue/text/about")}</span>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
+                    <div class="w-full mx-1 my-1">
+                        <a href="https://www.airisniemi.fi/" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:text-slate-900 light:hover:border-slate-900 light:hover:bg-slate-200 light:hover:text-slate-900 dark:border-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-slate-100 dark:hover:bg-slate-800 dark:hover:text-slate-100">
+                            <div class="flex flex-row justify-center items-center mx-1">
+                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("cottage")} alternateText="" />
+                            </div>
+                            <div class="flex flex-row justify-center items-center mx-1">
+                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/venue/text/airisniemi")}</span>
+                            </div>
+                            <div class="flex flex-row justify-center items-center mx-1">
+                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
