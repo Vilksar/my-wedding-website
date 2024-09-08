@@ -13,7 +13,7 @@ Welcome to the my (or our 😀) wedding website repository!
 
 This is an [Astro](https://astro.build/) static website with information for the wedding guests for before (and on) the wedding day.
 
-The website is available at [victor-viktoriia.wedding](victor-viktoriia.wedding).
+The website is available at [https://victor-viktoriia.wedding](https://victor-viktoriia.wedding).
 
 ## Download
 
