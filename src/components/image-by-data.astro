@@ -25,4 +25,4 @@ const { data, alternateText, ...attributes } = Astro.props as Properties;
 
 ---
 
-<Image {...attributes} src={data} alt={alternateText} data-component="image-by-data" />
+<Image {...attributes} src={data} alt={alternateText} widths={[1024, data.width]} sizes={`(max-width: 1024px) 1024px, ${data.width}px`} data-component="image-by-data" />

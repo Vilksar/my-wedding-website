@@ -27,8 +27,8 @@ const getColorSchemeBeforeLoad = () => {
     }
     // Define a function to return the color scheme from system.
     const getFromSystem = () => {
-        // Return the color scheme from system.
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        // Overwrite and return the color scheme from system.
+        return false && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     };
     // Get the color scheme from local storage.
     const colorSchemeFromLocalStorage = getFromLocalStorage();
