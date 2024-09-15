@@ -49,159 +49,178 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
-        <div class="relative z-0 w-full h-full">
-            <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-rsvp")} alternateText="" />
-        </div>
+        <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-rsvp")} alternateText="" />
     </Fragment>
     <Fragment slot="content-text">
-        <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-top")} alternateText="" />
+        <div class="w-full mt-6 mb-6 text-center">
+            <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/title")}</span>
         </div>
-        <div class="absolute bottom-0 left-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-bottom")} alternateText="" />
-        </div>
-        <div class="relative z-10 flex-auto flex flex-col justify-center items-center h-full w-full px-2">
-            <div class="w-full max-w-96 m-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/title")}</span>
-                    </div>
+        <div class="w-full mt-6 mb-6 text-center">
+            <div class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-yellow-800 light:bg-yellow-200 light:text-yellow-800 dark:border-yellow-800 dark:bg-yellow-200 dark:text-yellow-800">
+                <div class="basis-1/12 flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("warning")} alternateText="" />
                 </div>
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/text/message")}</span>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center items-center w-full pt-2 pb-4 text-center">
-                    <form class="group/form flex flex-col justify-center items-center w-full" action="" method="post" data-component="form" data-form-is-submitted="unknown">
-                        <div class="hidden group-data-[form-is-submitted=true]/form:flex flex-col justify-center items-center w-full my-2" data-component="form-result-success">
-                            <div class="w-full mx-1 my-0">
-                                <div class="flex flex-col justify-center items-center w-full my-2 px-2 py-1 border rounded light:border-green-700 light:bg-green-200 light:text-green-700 dark:border-green-300 dark:bg-green-800 dark:text-green-300">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/result/success")}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hidden group-data-[form-is-submitted=false]/form:flex flex-col justify-center items-center w-full my-2" data-component="form-result-error">
-                            <div class="w-full mx-1 my-0">
-                                <div class="flex flex-col justify-center items-center w-full my-2 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/result/error")}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
-                            <div class="w-full mx-1 my-0" data-form-entry="label">
-                                <label for="full-name" class="flex flex-row justify-center items-center">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/fullName/name")}</span>
-                                    <span class="text-base font-normal mx-1">&middot;</span>
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/fullName/isRequired?")}</span>
-                                </label>
-                                <div class="flex flex-row justify-center items-center">
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/fullName/description")}</span>
-                                </div>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="input">
-                                <input type="text" id="full-name" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="error">
-                                <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">
-                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/fullName/error")}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-invalid="unknown">
-                            <div class="w-full mx-1 my-0" data-form-entry="label">
-                                <label for="attendance-status" class="flex flex-row justify-center items-center">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/name")}</span>
-                                    <span class="text-base font-normal mx-1">&middot;</span>
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/isRequired?")}</span>
-                                </label>
-                                <div class="flex flex-row justify-center items-center">
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/description")}</span>
-                                </div>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="input">
-                                <select id="attendance-status" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
-                                    <option value="-">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/option/-")}</option>
-                                    <option value="no">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/option/no")}</option>
-                                    <option value="yes">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/option/yes")}</option>
-                                </select>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="error">
-                                <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">
-                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/attendanceStatus/error")}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-invalid="unknown">
-                            <div class="w-full mx-1 my-0" data-form-entry="label">
-                                <label for="menu-option" class="flex flex-row justify-center items-center">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/name")}</span>
-                                    <span class="text-base font-normal mx-1">&middot;</span>
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/isRequired?")}</span>
-                                </label>
-                                <div class="flex flex-row justify-center items-center">
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/description")}</span>
-                                </div>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="input">
-                                <select id="menu-option" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
-                                    <option value="-">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/option/-")}</option>
-                                    <option value="regular">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/option/regular")}</option>
-                                    <option value="vegetarian">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/option/vegetarian")}</option>
-                                    <option value="vegan">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/option/vegan")}</option>
-                                </select>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="error">
-                                <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">
-                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuOption/error")}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-invalid="unknown">
-                            <div class="w-full mx-1 my-0" data-form-entry="label">
-                                <label for="menu-restrictions" class="flex flex-row justify-center items-center">
-                                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuRestrictions/name")}</span>
-                                    <span class="text-base font-normal mx-1">&middot;</span>
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuRestrictions/isRequired?")}</span>
-                                </label>
-                                <div class="flex flex-row justify-center items-center">
-                                    <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuRestrictions/description")}</span>
-                                </div>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="input">
-                                <input type="text" id="menu-restrictions" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-entry="error">
-                                <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">
-                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/entry/menuRestrictions/error")}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group/form-submit flex flex-col justify-center items-center w-full my-2" data-component="form-submit" data-form-submit-is-valid="unknown">
-                            <div class="w-full mx-1 my-0" data-form-submit="button">
-                                <button type="submit" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 light:disabled:border-slate-400 light:disabled:bg-slate-200 light:disabled:text-slate-400 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700 dark:disabled:border-slate-600 dark:disabled:bg-slate-800 dark:disabled:text-slate-600" disabled="disabled">
-                                    <div class="flex flex-row justify-center items-center mx-1">
-                                        <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("mark-as-unread")} alternateText="" />
-                                    </div>
-                                    <div class="flex flex-row justify-center items-center mx-1">
-                                        <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/submit/name")}</span>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-submit="warning">
-                                <div class="flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-yellow-700 light:bg-yellow-200 light:text-yellow-700 dark:border-yellow-300 dark:bg-yellow-800 dark:text-yellow-300">
-                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/submit/warning")}</span>
-                                </div>
-                            </div>
-                            <div class="w-full mx-1 my-0" data-form-submit="error">
-                                <div class="hidden group-data-[form-submit-is-valid=false]/form-submit:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-700 light:bg-red-200 light:text-red-700 dark:border-red-300 dark:bg-red-800 dark:text-red-300">
-                                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/form/submit/error")}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="basis-11/12 flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/warning")}</span>
                 </div>
             </div>
+        </div>
+        <div class="w-full mt-6 mb-2 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/message")}</span>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <form class="group/form flex flex-col justify-center items-center w-full" action="" method="post" data-component="form" data-form-is-submitted="unknown">
+                <div class="hidden group-data-[form-is-submitted=true]/form:flex flex-col justify-center items-center w-full my-2" data-component="form-result-success">
+                    <div class="w-full mx-1 my-0">
+                        <div class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-green-800 light:bg-green-200 light:text-green-800 dark:border-green-800 dark:bg-green-200 dark:text-green-800">
+                            <div class="basis-1/12 flex flex-row justify-center items-center mx-1">
+                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("check-circle")} alternateText="" />
+                            </div>
+                            <div class="basis-11/12 flex flex-row justify-center items-center mx-1">
+                                <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/result/success")}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden group-data-[form-is-submitted=false]/form:flex flex-col justify-center items-center w-full my-2" data-component="form-result-error">
+                    <div class="w-full mx-1 my-0">
+                        <div class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-800 dark:bg-red-200 dark:text-red-800">
+                            <div class="basis-1/12 flex flex-row justify-center items-center mx-1">
+                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("error")} alternateText="" />
+                            </div>
+                            <div class="basis-11/12 flex flex-row justify-center items-center mx-1">
+                                <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/result/error")}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
+                    <div class="w-full mx-1 my-0" data-form-entry="label">
+                        <label for="full-name" class="flex flex-row justify-center items-center">
+                            <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/name")}</span>
+                            <span class="text-base font-normal mx-1">&middot;</span>
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/isRequired?")}</span>
+                        </label>
+                        <div class="flex flex-row justify-center items-center">
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/description")}</span>
+                        </div>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="input">
+                        <input type="text" id="full-name" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="error">
+                        <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
+                            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/error")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
+                    <div class="w-full mx-1 my-0" data-form-entry="label">
+                        <label for="attendance-status" class="flex flex-row justify-center items-center">
+                            <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/name")}</span>
+                            <span class="text-base font-normal mx-1">&middot;</span>
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/isRequired?")}</span>
+                        </label>
+                        <div class="flex flex-row justify-center items-center">
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/description")}</span>
+                        </div>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="input">
+                        <select id="attendance-status" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
+                            <option value="-">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/option/-")}</option>
+                            <option value="no">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/option/no")}</option>
+                            <option value="yes">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/option/yes")}</option>
+                        </select>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="error">
+                        <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
+                            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/error")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
+                    <div class="w-full mx-1 my-0" data-form-entry="label">
+                        <label for="menu-option" class="flex flex-row justify-center items-center">
+                            <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/name")}</span>
+                            <span class="text-base font-normal mx-1">&middot;</span>
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/isRequired?")}</span>
+                        </label>
+                        <div class="flex flex-row justify-center items-center">
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/description")}</span>
+                        </div>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="input">
+                        <select id="menu-option" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
+                            <option value="-">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/-")}</option>
+                            <option value="regular">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/regular")}</option>
+                            <option value="vegetarian">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/vegetarian")}</option>
+                            <option value="vegan">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/vegan")}</option>
+                        </select>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="error">
+                        <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
+                            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/error")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
+                    <div class="w-full mx-1 my-0" data-form-entry="label">
+                        <label for="menu-restrictions" class="flex flex-row justify-center items-center">
+                            <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/name")}</span>
+                            <span class="text-base font-normal mx-1">&middot;</span>
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/isRequired?")}</span>
+                        </label>
+                        <div class="flex flex-row justify-center items-center">
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/description")}</span>
+                        </div>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="input">
+                        <input type="text" id="menu-restrictions" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="error">
+                        <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
+                            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/error")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
+                    <div class="w-full mx-1 my-0" data-form-entry="label">
+                        <label for="additional-information" class="flex flex-row justify-center items-center">
+                            <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/name")}</span>
+                            <span class="text-base font-normal mx-1">&middot;</span>
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/isRequired?")}</span>
+                        </label>
+                        <div class="flex flex-row justify-center items-center">
+                            <span class="text-xs font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/description")}</span>
+                        </div>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="input">
+                        <textarea id="additioan-information" class="w-full text-center rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-entry="error">
+                        <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
+                            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/error")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group/form-submit flex flex-col justify-center items-center w-full my-2" data-component="form-submit" data-form-submit-is-valid="unknown">
+                    <div class="w-full mx-1 my-0" data-form-submit="button">
+                        <button type="submit" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 light:disabled:border-slate-400 light:disabled:bg-slate-200 light:disabled:text-slate-400 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700 dark:disabled:border-slate-600 dark:disabled:bg-slate-800 dark:disabled:text-slate-600" disabled="disabled">
+                            <div class="flex flex-row justify-center items-center mx-1">
+                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("mark-as-unread")} alternateText="" />
+                            </div>
+                            <div class="flex flex-row justify-center items-center mx-1">
+                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/submit/name")}</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="w-full mx-1 my-0" data-form-submit="error">
+                        <div class="hidden group-data-[form-submit-is-valid=false]/form-submit:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
+                            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/submit/error")}</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </Fragment>
 </Layout>

@@ -49,164 +49,429 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
-        <div class="relative z-0 w-full h-full">
-            <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-travel")} alternateText="" />
-        </div>
+        <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-travel")} alternateText="" />
     </Fragment>
     <Fragment slot="content-text">
-        <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-top")} alternateText="" />
+        <div class="w-full mt-6 mb-6 text-center">
+            <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/title")}</span>
         </div>
-        <div class="absolute bottom-0 left-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-bottom")} alternateText="" />
-        </div>
-        <div class="relative z-10 flex-auto flex flex-col justify-center items-center h-full w-full px-2">
-            <div class="w-full max-w-96 m-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/title")}</span>
-                    </div>
+        <div class="w-full mt-6 mb-6 text-center">
+            <div class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-yellow-800 light:bg-yellow-200 light:text-yellow-800 dark:border-yellow-800 dark:bg-yellow-200 dark:text-yellow-800">
+                <div class="basis-1/12 flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("warning")} alternateText="" />
                 </div>
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/introduction/1")}</span>
-                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/introduction/2")}</span>
-                        <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/introduction/3")}</span>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/hotels")}</span>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.sokoshotels.fi/en/reservation/collection/TURKU?startDate=2025-07-04&endDate=2025-07-07&adults=2&numberOfRooms=1&promotionCode=" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/hotels/sokos")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.scandichotels.com/hotelreservation/select-hotel?city=TURKU&fromDate=2025-07-4&toDate=2025-07-7&room%5b0%5d.adults=2&bookingCode=" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/hotels/scandic")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/websites")}</span>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.booking.com/searchresults.html?ss=Turku%2C+Southern+Finland%2C+Finland&dest_id=-1389822&checkin=2025-07-04&checkout=2025-07-07&group_adults=2&no_rooms=1&group_children=0&flex_window=1" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("laptop-windows")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/websites/booking")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.airbnb.com/s/Turku--Finland/homes?query=Turku%2C%20Finland&checkin=2025-07-04&checkout=2025-07-07&adults=2" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("laptop-windows")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/websites/airbnb")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/text/accommodation/towns")}</span>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Kaarina/@60.4106184,22.3529758,14z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/towns/kaarina")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Raisio/@60.4834247,22.1314979,14z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/towns/raisio")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Naantali/@60.4120367,21.6417184,11z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/towns/naantali")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/21600+Pargas/@60.3010922,22.2919416,15z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/towns/parainen")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-full mx-1 my-1">
-                        <a href="https://www.google.com/maps/place/Salo/@60.3898507,23.0874524,13z" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/link/accommodation/towns/salo")}</span>
-                            </div>
-                            <div class="flex flex-row justify-center items-center mx-1">
-                                <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
-                            </div>
-                        </a>
-                    </div>
+                <div class="basis-11/12 flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/warning")}</span>
                 </div>
             </div>
+        </div>
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/aboutTurku")}</span>
+        </div>
+        <div class="w-full mt-4 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/aboutTurku/googleMapsTurku")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("help")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/aboutTurku/wikipediaTurku")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("location-city")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/aboutTurku/cityOfTurku")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("location-city")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/aboutTurku/visitTurku")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/getToFinland")}</span>
+        </div>
+        <div class="w-full mt-4 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("flight")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/getToFinland/airBaltic")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("flight")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/getToFinland/sas")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("flight")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/getToFinland/wizzAir")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("directions-boat")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/getToFinland/vikingLine")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundFinland")}</span>
+        </div>
+        <div class="w-full mt-4 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("directions-railway")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundFinland/vr")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("directions-bus")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundFinland/matkahuolto")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("directions-bus")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundFinland/onnibus")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("car-rental")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundFinland/24rent")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("car-rental")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundFinland/fiRent")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundTurku")}</span>
+        </div>
+        <div class="w-full mt-4 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("transit-ticket")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundTurku/foli")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("scooter")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundTurku/voi")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("local-taxi")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundTurku/taxiData")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("directions-car")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundTurku/bolt")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("directions-car")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/goAroundTurku/uber")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku")}</span>
+        </div>
+        <div class="w-full mt-4 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("laptop-windows")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/booking")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("laptop-windows")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/airbnb")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/bobw")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/centro")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("apartment")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/omena")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("location-city")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/scandic")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("location-city")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayInTurku/sokos")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayAroundTurku")}</span>
+        </div>
+        <div class="w-full mt-4 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayAroundTurku/googleMapsKaarina")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayAroundTurku/googleMapsNaantali")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayAroundTurku/googleMapsParainen")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-2 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayAroundTurku/googleMapsRaisio")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
+        </div>
+        <div class="w-full mt-2 mb-6 text-center">
+            <a href="" target="_blank" class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("map")} alternateText="" />
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <span class="text-base font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/travel/stayAroundTurku/googleMapsSalo")}</span>
+                </div>
+                <div class="flex flex-row justify-center items-center mx-1">
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("open-in-new")} alternateText="" />
+                </div>
+            </a>
         </div>
     </Fragment>
 </Layout>

@@ -6,7 +6,7 @@ import { z, defineCollection } from 'astro:content';
  */
 export const constants = {
     "./app/title": "Victor & Viktoriia" as const,
-    "./app/subtitle": "2024-07-05" as const,
+    "./app/subtitle": "05.07.2025" as const,
 } as const;
 
 /**

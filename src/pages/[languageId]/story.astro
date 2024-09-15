@@ -48,25 +48,20 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
-        <div class="relative z-0 w-full h-full">
-            <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-story")} alternateText="" />
-        </div>
+        <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-story")} alternateText="" />
     </Fragment>
     <Fragment slot="content-text">
-        <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-top")} alternateText="" />
+        <div class="w-full mt-6 mb-6 text-center">
+            <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/story/title")}</span>
         </div>
-        <div class="absolute bottom-0 left-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-bottom")} alternateText="" />
+        <div class="w-full mt-6 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/story/firstMeet")}</span>
         </div>
-        <div class="relative z-10 flex-auto flex flex-col justify-center items-center h-full w-full px-2">
-            <div class="w-full max-w-96 m-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-5xl font-cursive">{getTranslation(currentLanguage.id, "pages/[languageId]/story/title")}</span>
-                    </div>
-                </div>
-            </div>
+        <div class="w-full mt-4 mb-4 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/story/lifeTogether")}</span>
+        </div>
+        <div class="w-full mt-4 mb-6 text-center">
+            <span class="text-base font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/story/readyForWedding")}</span>
         </div>
     </Fragment>
 </Layout>

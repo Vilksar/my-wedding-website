@@ -1,7 +1,7 @@
 ---
 
 // Import the project scripts.
-import { getImage, getLanguages, getTranslation, getLocalizedRoute, getAppTitle } from "../scripts/build";
+import { getImage, getLanguages, getLocalizedRoute } from "../scripts/build";
 
 // Import the project layout.
 import type { Properties } from "../layouts/layout.astro";
@@ -21,46 +21,22 @@ const properties: Properties = {
 
 <Layout {...properties}>
     <Fragment slot="content-image">
-        <div class="relative z-0 w-full h-full">
-            <div class="object-cover w-full h-full bg-gradient-to-br light:from-slate-200 light:to-slate-500 dark:from-slate-500 dark:to-slate-800" />
-        </div>
+        <ImageByData class:list="object-cover w-full h-full" data={getImage("cover-home")} alternateText="" />
     </Fragment>
     <Fragment slot="content-text">
-        <div class="absolute top-0 right-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-top")} alternateText="" />
-        </div>
-        <div class="absolute bottom-0 left-0 z-0 flex flex-row m-0 p-0">
-            <ImageByData data={getImage("detail-bottom")} alternateText="" />
-        </div>
-        <div class="relative z-10 flex-auto flex flex-col justify-center items-center h-full w-full px-2">
-            <div class="w-full max-w-96 mx-5 p-5 rounded border light:border-slate-200 light:bg-slate-100/50 dark:border-slate-800 dark:bg-slate-900/50">
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-6 text-center">
-                    <div class="w-full mx-1 my-1">
-                        <span class="text-5xl font-cursive">{getAppTitle(undefined)}</span>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center items-center w-full pt-6 pb-4 text-center">
-                    {getLanguages().map(async (language) =>
-                        <div class="w-full mx-1 my-0" lang={language.id} dir={language.direction}>
-                            <span class="text-xl font-light">{getTranslation(language.id, "pages/index/text/chooseLanguage")}</span>
+        <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
+            {getLanguages().map(async (language) =>
+                <div class="w-full mx-1 my-1" lang={language.id} dir={language.direction}>
+                    <a href={getLocalizedRoute("/home/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
+                        <div class="flex flex-row justify-center items-center mx-1">
+                            <ImageByData class:list="w-6 h-6 min-w-6" data={language.icon} alternateText={language.nativeName} />
                         </div>
-                    )}
-                </div>
-                <div class="flex flex-col justify-center items-center w-full pt-4 pb-4 text-center">
-                    {getLanguages().map(async (language) =>
-                        <div class="w-full mx-1 my-1" lang={language.id} dir={language.direction}>
-                            <a href={getLocalizedRoute("/home/", undefined, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700">
-                                <div class="flex flex-row justify-center items-center mx-1">
-                                    <ImageByData class:list="w-6 h-6 min-w-6" data={language.icon} alternateText="" />
-                                </div>
-                                <div class="flex flex-row justify-center items-center mx-1">
-                                    <span class="text-base font-semibold">{getTranslation(language.id, `content/languages/${language.id}`)}</span>
-                                </div>
-                            </a>
+                        <div class="flex flex-row justify-center items-center mx-1">
+                            <span class="text-base font-semibold">{language.nativeName}</span>
                         </div>
-                    )}
+                    </a>
                 </div>
-            </div>
+            )}
         </div>
     </Fragment>
 </Layout>

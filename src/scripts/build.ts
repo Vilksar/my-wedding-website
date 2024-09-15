@@ -316,27 +316,16 @@ export function getAppLogo(): string {
  * @param languageId The language ID.
  * @returns The application title.
  */
-export function getAppTitle(languageId: (string | undefined)) {
-    // Check if there is no language ID provided.
-    if (languageId === null || languageId === undefined || languageId === "") {
-        // Return the default application title.
-        return constants["./app/title"];
-    }
-    // Return the translated application title.
-    return getTranslation(languageId, "./app/title")
+export function getAppTitle() {
+    // Return the default application title.
+    return constants["./app/title"];
 }
 
 /**
  * Gets the application subtitle.
- * @param languageId The language ID.
  * @returns The application subtitle.
  */
-export function getAppSubtitle(languageId: (string | undefined)) {
-    // Check if there is no language ID provided.
-    if (languageId === null || languageId === undefined || languageId === "") {
-        // Return the default application subtitle.
-        return constants["./app/subtitle"];
-    }
-    // Return the translated application subtitle.
-    return getTranslation(languageId, "./app/subtitle")
+export function getAppSubtitle() {
+    // Return the default application subtitle.
+    return constants["./app/subtitle"];
 }
