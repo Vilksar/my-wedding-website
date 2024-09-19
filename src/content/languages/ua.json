@@ -67,7 +67,7 @@
         "pages/[languageId]/travel/stayAroundTurku/googleMapsRaisio": "🇺🇦 Raisio on Google Maps 🇺🇦",
         "pages/[languageId]/travel/stayAroundTurku/googleMapsSalo": "🇺🇦 Salo on Google Maps 🇺🇦",
         "pages/[languageId]/rsvp/title": "🇺🇦 R.S.V.P. 🇺🇦",
-        "pages/[languageId]/rsvp/warning": "🇺🇦 The form can't be submitted yet, as the functionality has not been implemented. 🇺🇦",
+        "pages/[languageId]/rsvp/warning": "🇺🇦 Please come back later, as the form is not yet ready. :) 🇺🇦",
         "pages/[languageId]/rsvp/message": "🇺🇦 The form should be filled in and submitted separately for every guest in the party. 🇺🇦",
         "pages/[languageId]/rsvp/result/success": "🇺🇦 The form was submitted successfully! 🇺🇦",
         "pages/[languageId]/rsvp/result/error": "🇺🇦 The form could not be submitted, as it contains one or more errors. 🇺🇦",
