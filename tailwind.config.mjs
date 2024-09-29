@@ -10,8 +10,11 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				cursive: [
+				"family-cursive": [
 					"GreatVibes", "sans-serif"
+				],
+				"family-serif": [
+					"Playfair", "serif"
 				]
 			}
 		}
@@ -22,6 +25,12 @@ export default {
 				"@font-face": {
 					"font-family": `GreatVibes`,
 					"src": `url("/src/assets/fonts/GreatVibes.ttf")`
+				}
+			});
+			addBase({
+				"@font-face": {
+					"font-family": `Playfair`,
+					"src": `url("/src/assets/fonts/Playfair.ttf")`
 				}
 			});
 		}),
