@@ -125,6 +125,57 @@ async function loadImageById(imageId: string): Promise<ImageMetadata> {
 }
 
 /**
+ * Loads the video IDs.
+ * @returns The video IDs.
+ */
+function loadVideoIds(): string[] {
+    // Define the path regular expression.
+    const pathRegExp = /^\.\.\/\.\.\/public\/assets\/videos\/([\w\d\-]+)\.mp4$/g;
+    // Define the video IDs.
+    const videoIds = [];
+    // Load the paths.
+    const paths = Object.keys(import.meta.glob("../../public/assets/videos/*.mp4"));
+    // Go over each path.
+    for (const path of paths) {
+        // Get the match against the path regular expression.
+        const match = [...path.matchAll(pathRegExp)][0];
+        // Check if there is no match.
+        if (match === null || match === undefined) {
+            // Continue.
+            continue;
+        }
+        // Get the capture within the match.
+        const capture = match[1];
+        // Check if there is no capture.
+        if (capture === null || capture === undefined) {
+            // Continue.
+            continue;
+        }
+        // Add the capture to the video IDs.
+        videoIds.push(capture);
+    }
+    // Return the video IDs.
+    return videoIds;
+}
+
+/**
+ * Loads an video by ID.
+ * @param videoId The video ID.
+ * @returns The video.
+ */
+async function loadVideoById(videoId: string): Promise<string> {
+    // Load the video.
+    const { default: video }: { default: string } = await import(`../../public/assets/videos/${videoId}.mp4`);
+    // Check if there is no video.
+    if (video === null || video === undefined) {
+        // Throw an error.
+        throw new Error(`The video with the ID "${videoId}" does not exist.`);
+    }
+    // Return the video.
+    return video.replace("/public/", "/");
+}
+
+/**
  * Ensures that an entry has a consistent ID.
  * @param entry The entry.
  * @returns True if the entry has a consistent ID.
@@ -155,7 +206,11 @@ const assets = {
     images: await loadImageIds()
         .reduce(async (accumulator, imageId) => ({
             ...(await accumulator), [imageId]: await loadImageById(imageId)
-        }), Promise.resolve({} as { [key: string]: ImageMetadata }))
+        }), Promise.resolve({} as { [key: string]: ImageMetadata })),
+    videos: await loadVideoIds()
+        .reduce(async (accumulator, videoId) => ({
+            ...(await accumulator), [videoId]: await loadVideoById(videoId)
+        }), Promise.resolve({} as { [key: string]: string }))
 };
 
 /**
@@ -191,8 +246,8 @@ export function getIcon(iconId: string): string {
 }
 
 /**
- * Gets an icon.
- * @returns The icon.
+ * Gets an image.
+ * @returns The image.
  */
 export function getImage(imageId: string): ImageMetadata {
     // Get the image.
@@ -204,6 +259,22 @@ export function getImage(imageId: string): ImageMetadata {
     }
     // Return the image.
     return image;
+}
+
+/**
+ * Gets an video.
+ * @returns The video.
+ */
+export function getVideo(videoId: string): string {
+    // Get the video.
+    const video = assets.videos[videoId];
+    // Check if there is no video.
+    if (video === null || video === undefined) {
+        // Throw an error.
+        throw new Error(`A video with the ID "${videoId}" does not exist.`);
+    }
+    // Return the video.
+    return video;
 }
 
 /**

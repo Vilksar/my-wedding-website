@@ -1,0 +1,28 @@
+---
+
+/**
+ * Represents the properties.
+ */
+interface Properties {
+
+    /**
+     * The data.
+     */
+    data: string;
+
+    /**
+     * The alternate text.
+     */
+    alternateText: string;
+
+}
+
+// Get the properties.
+const { data, alternateText, ...attributes } = Astro.props as Properties;
+
+---
+
+<video {...attributes} controls="controls" autoplay="autoplay" data-component="video-by-data">
+    <source src={data} type="video/mp4">
+    <span class="sr-only">{alternateText}</span>
+</video>
