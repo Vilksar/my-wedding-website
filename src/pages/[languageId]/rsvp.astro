@@ -55,20 +55,20 @@ const properties: Properties = {
         <div class="w-full mt-6 mb-6 text-center">
             <span class="text-5xl font-family-cursive font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/title")}</span>
         </div>
-        <div class="w-full mt-6 mb-6 text-center">
-            <div class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-yellow-800 light:bg-yellow-200 light:text-yellow-800 dark:border-yellow-800 dark:bg-yellow-200 dark:text-yellow-800">
+        <div class="w-full mt-6 mb-6 text-left">
+            <div class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-violet-800 light:bg-violet-200 light:text-violet-800 dark:border-violet-800 dark:bg-violet-200 dark:text-violet-800">
                 <div class="basis-1/12 flex flex-row justify-center items-center mx-1">
-                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("warning")} alternateText="" />
+                    <IconByData class:list="w-6 h-6 min-w-6" data={getIcon("info")} alternateText="" />
                 </div>
                 <div class="basis-11/12 flex flex-row justify-center items-center mx-1">
-                    <span class="text-base font-family-serif font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/warning")}</span>
+                    <span class="text-base font-family-serif font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/info")}</span>
                 </div>
             </div>
         </div>
-        <div class="w-full mt-6 mb-2 text-center">
+        <div class="w-full mt-6 mb-2 text-left">
             <span class="text-base font-family-serif font-normal">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/message")}</span>
         </div>
-        <div class="w-full mt-2 mb-6 text-center">
+        <div class="w-full mt-2 mb-6 text-left">
             <form class="group/form flex flex-col justify-center items-center w-full" action="" method="post" data-component="form" data-form-is-submitted="unknown">
                 <div class="hidden group-data-[form-is-submitted=true]/form:flex flex-col justify-center items-center w-full my-2" data-component="form-result-success">
                     <div class="w-full mx-1 my-0">
@@ -96,17 +96,17 @@ const properties: Properties = {
                 </div>
                 <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
                     <div class="w-full mx-1 my-0" data-form-entry="label">
-                        <label for="full-name" class="flex flex-row justify-center items-center">
+                        <label for="full-name" class="flex flex-row justify-start items-center">
                             <span class="text-base font-family-serif font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/name")}</span>
                             <span class="text-base font-family-serif font-normal mx-1">&middot;</span>
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/isRequired?")}</span>
                         </label>
-                        <div class="flex flex-row justify-center items-center">
+                        <div class="flex flex-row justify-start items-center">
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/fullName/description")}</span>
                         </div>
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="input">
-                        <input type="text" id="full-name" class="w-full text-center text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
+                        <input type="text" id="full-name" class="w-full text-left text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="error">
                         <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
@@ -116,17 +116,17 @@ const properties: Properties = {
                 </div>
                 <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
                     <div class="w-full mx-1 my-0" data-form-entry="label">
-                        <label for="attendance-status" class="flex flex-row justify-center items-center">
+                        <label for="attendance-status" class="flex flex-row justify-start items-center">
                             <span class="text-base font-family-serif font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/name")}</span>
                             <span class="text-base font-family-serif font-normal mx-1">&middot;</span>
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/isRequired?")}</span>
                         </label>
-                        <div class="flex flex-row justify-center items-center">
+                        <div class="flex flex-row justify-start items-center">
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/description")}</span>
                         </div>
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="input">
-                        <select id="attendance-status" class="w-full text-center text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
+                        <select id="attendance-status" class="w-full text-left text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
                             <option value="-">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/option/-")}</option>
                             <option value="no">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/option/no")}</option>
                             <option value="yes">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/attendanceStatus/option/yes")}</option>
@@ -140,17 +140,17 @@ const properties: Properties = {
                 </div>
                 <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
                     <div class="w-full mx-1 my-0" data-form-entry="label">
-                        <label for="menu-option" class="flex flex-row justify-center items-center">
+                        <label for="menu-option" class="flex flex-row justify-start items-center">
                             <span class="text-base font-family-serif font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/name")}</span>
                             <span class="text-base font-family-serif font-normal mx-1">&middot;</span>
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/isRequired?")}</span>
                         </label>
-                        <div class="flex flex-row justify-center items-center">
+                        <div class="flex flex-row justify-start items-center">
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/description")}</span>
                         </div>
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="input">
-                        <select id="menu-option" class="w-full text-center text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
+                        <select id="menu-option" class="w-full text-left text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500">
                             <option value="-">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/-")}</option>
                             <option value="regular">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/regular")}</option>
                             <option value="vegetarian">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/menuOption/option/vegetarian")}</option>
@@ -165,17 +165,17 @@ const properties: Properties = {
                 </div>
                 <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
                     <div class="w-full mx-1 my-0" data-form-entry="label">
-                        <label for="menu-restrictions" class="flex flex-row justify-center items-center">
+                        <label for="menu-restrictions" class="flex flex-row justify-start items-center">
                             <span class="text-base font-family-serif font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/name")}</span>
                             <span class="text-base font-family-serif font-normal mx-1">&middot;</span>
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/isRequired?")}</span>
                         </label>
-                        <div class="flex flex-row justify-center items-center">
+                        <div class="flex flex-row justify-start items-center">
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/dietaryRestrictions/description")}</span>
                         </div>
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="input">
-                        <input type="text" id="menu-restrictions" class="w-full text-center text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
+                        <input type="text" id="menu-restrictions" class="w-full text-left text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="error">
                         <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
@@ -185,17 +185,17 @@ const properties: Properties = {
                 </div>
                 <div class="group/form-entry flex flex-col justify-center items-center w-full my-2" data-component="form-entry" data-form-entry-is-valid="unknown">
                     <div class="w-full mx-1 my-0" data-form-entry="label">
-                        <label for="additional-information" class="flex flex-row justify-center items-center">
+                        <label for="additional-information" class="flex flex-row justify-start items-center">
                             <span class="text-base font-family-serif font-semibold">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/name")}</span>
                             <span class="text-base font-family-serif font-normal mx-1">&middot;</span>
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/isRequired?")}</span>
                         </label>
-                        <div class="flex flex-row justify-center items-center">
+                        <div class="flex flex-row justify-start items-center">
                             <span class="text-xs font-family-serif font-light">{getTranslation(currentLanguage.id, "pages/[languageId]/rsvp/additionalInformation/description")}</span>
                         </div>
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="input">
-                        <textarea id="additional-information" class="w-full text-center text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
+                        <textarea id="additional-information" class="w-full text-left text-base font-family-serif font-normal rounded-md py-1.5 px-2 border outline-2 light:border-slate-300 light:bg-slate-50 light:outline-slate-500 light:hover:border-slate-500 dark:border-slate-700 dark:bg-slate-950 dark:outline-slate-500 dark:hover:border-slate-500" />
                     </div>
                     <div class="w-full mx-1 my-0" data-form-entry="error">
                         <div class="hidden group-data-[form-entry-is-valid=false]/form-entry:flex flex-col justify-center items-center w-full mt-1 px-2 py-1 border rounded light:border-red-800 light:bg-red-200 light:text-red-800 dark:border-red-200 dark:bg-red-800 dark:text-red-200">
