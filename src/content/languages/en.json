@@ -47,7 +47,7 @@
         "pages/[languageId]/travel/goAroundFinland/onnibus": "Onnibus (bus tickets)",
         "pages/[languageId]/travel/goAroundFinland/24rent": "24Rent (car rental)",
         "pages/[languageId]/travel/goAroundFinland/fiRent": "FiRENT (car rental)",
-        "pages/[languageId]/travel/howToGoAroundTurku": "How to go around Turku",
+        "pages/[languageId]/travel/howToGetAroundTurku": "How to get around Turku",
         "pages/[languageId]/travel/goAroundTurku": "There are many options for local travel in the Turku area. The public transport is fast and reliable, allowing for both single tickets and multi-day passes. Renting bikes or scooters is also possible. Taxi services are highly rated, but generally considered expensive, and while ride-sharing options have recently become available, they are not yet very common.",
         "pages/[languageId]/travel/goAroundTurku/foli": "Föli (public transport)",
         "pages/[languageId]/travel/goAroundTurku/cityBikes": "City Bikes (bicycle rental)",
