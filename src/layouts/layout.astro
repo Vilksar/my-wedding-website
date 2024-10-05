@@ -133,7 +133,7 @@ const pages = [
                                     )}
                                 </div>
                                 <div class="flex-none flex flex-row justify-center items-center w-full py-2 text-center" data-component="languages">
-                                    {getLanguages().filter((language) => language.id === "en").map((language) =>
+                                    {getLanguages().map((language) =>
                                         <div class="w-full mx-1 my-1">
                                             <a href={getLocalizedRoute(Astro.url.pathname, properties.languageId, language.id)} class="flex flex-row justify-center items-center w-full p-2 border rounded light:border-slate-900 light:bg-slate-100 light:hover:border-slate-900 light:hover:bg-slate-300 light:data-[language-is-active=true]:border-slate-900 light:data-[language-is-active=true]:bg-slate-200 light:hover:data-[language-is-active=true]:border-slate-900 light:hover:data-[language-is-active=true]:bg-slate-300 dark:border-slate-100 dark:bg-slate-900 dark:hover:border-slate-100 dark:hover:bg-slate-700 dark:data-[language-is-active=true]:border-slate-100 dark:data-[language-is-active=true]:bg-slate-800 dark:hover:data-[language-is-active=true]:border-slate-100 dark:hover:data-[language-is-active=true]:bg-slate-700" data-language={language.id} data-language-is-active={`${language.id === properties.languageId}`}>
                                                 <div class="flex flex-row justify-center items-center mx-1">
