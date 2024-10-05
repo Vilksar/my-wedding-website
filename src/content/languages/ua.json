@@ -79,7 +79,7 @@
         "pages/[languageId]/rsvp/attendanceStatus/option/-": "--- select an attendance status ---",
         "pages/[languageId]/rsvp/attendanceStatus/option/no": "Ні",
         "pages/[languageId]/rsvp/attendanceStatus/option/yes": "Так",
-        "pages/[languageId]/rsvp/attendanceStatus/error": "Виберіть одну з опцій",
+        "pages/[languageId]/rsvp/attendanceStatus/error": "Виберіть одну з опцій.",
         "pages/[languageId]/rsvp/menuOption/name": "Меню",
         "pages/[languageId]/rsvp/menuOption/isRequired?": "Обов'язкове поле",
         "pages/[languageId]/rsvp/menuOption/description": "Виберіть один з варіантів меню.",
