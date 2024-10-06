@@ -39,7 +39,7 @@ const getColorSchemeBeforeLoad = () => {
     }
     // Return the color scheme from system.
     return getFromSystem();
-}
+};
 
 /**
  * Sets the color scheme before the page is loaded.
@@ -58,7 +58,7 @@ const setColorSchemeBeforeLoad = (colorScheme) => {
         // Log the error.
         console.log(`An error has occurred while trying to set the color scheme in local storage on initialization: ${errorMessage}`)
     }
-}
+};
 
 // Get the color scheme.
 const colorScheme = getColorSchemeBeforeLoad();
