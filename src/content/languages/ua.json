@@ -13,6 +13,8 @@
         "layouts/layout/menu": "Меню",
         "layouts/layout/madeWithLove": "Зроблено з любов'ю ❤.",
         "layouts/layout/availableOnGitHub": "Доступно на GitHub.",
+        "pages/404/nothingHere": "Ви перейшли на сторінку, якої не існує.",
+        "pages/404/homePage": "Головна",
         "pages/[languageId]/home/title": "Головна",
         "pages/[languageId]/home/who": "Віктор і Вікторія",
         "pages/[languageId]/home/when": "5 липня, 2025",

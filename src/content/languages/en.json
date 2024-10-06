@@ -13,6 +13,8 @@
         "layouts/layout/menu": "Menu",
         "layouts/layout/madeWithLove": "Made with ❤.",
         "layouts/layout/availableOnGitHub": "Available on GitHub.",
+        "pages/404/nothingHere": "You reached a page that does not exist.",
+        "pages/404/homePage": "Home",
         "pages/[languageId]/home/title": "Home",
         "pages/[languageId]/home/who": "Victor and Viktoriia",
         "pages/[languageId]/home/when": "July 5th, 2025",

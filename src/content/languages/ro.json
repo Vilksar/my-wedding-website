@@ -13,6 +13,8 @@
         "layouts/layout/menu": "Meniu",
         "layouts/layout/madeWithLove": "Creat cu ❤.",
         "layouts/layout/availableOnGitHub": "Disponibil pe GitHub.",
+        "pages/404/nothingHere": "Ați ajuns la o pagină care nu există.",
+        "pages/404/homePage": "Acasă",
         "pages/[languageId]/home/title": "Acasă",
         "pages/[languageId]/home/who": "Victor și Viktoriia",
         "pages/[languageId]/home/when": "5 iulie 2025",
